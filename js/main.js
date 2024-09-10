@@ -3,6 +3,11 @@
  	easing: 'slide'
  });
 
+ $('input').on('change', function() {
+	$('body').toggleClass('blue');
+  });
+  
+
 (function($) {
 	
 
