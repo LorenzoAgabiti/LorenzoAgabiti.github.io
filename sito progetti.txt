@@ -1,0 +1,19 @@
+app che prevede se sarò assunto dall'azienda
+app che consiglia film
+app inutili(vedi insta)
+
+
+
+
+int_math: Image by Freepik
+int_cooking: Image by jcomp on Freepik
+int_music: Image by Harryarts on Freepik
+int_maps: Image by Harryarts on Freepik
+int_useful: Bolt Stock photos by Vecteezy
+<a href="https://www.flaticon.com/free-icons/rome" title="rome icons">Rome icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/paris" title="paris icons">Paris icons created by istar_design_bureau - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/world" title="world icons">World icons created by turkkub - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/italy" title="italy icons">Italy icons created by Anditii Creative - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/spotify-sketch" title="spotify sketch icons">Spotify sketch icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/books" title="books icons">Books icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/youtube" title="youtube icons">Youtube icons created by Freepik - Flaticon</a>
