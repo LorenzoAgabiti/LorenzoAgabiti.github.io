@@ -11301,6 +11301,14 @@ h2{
   background-color: transparent;
 }
 
+@media (max-width: 960px) {
+  #home-section a{
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+  }
+}
+
 #home-section .container {
   width: 100%;
   padding-right: 15px;
@@ -11602,17 +11610,31 @@ h2{
   line-height: 1.2;
   font-weight: 800;
 }
+
+@media (max-width: 1000px) {
+  #home-section .owl-carousel.home-slider .slider-item .slider-text h1{
+    color: var(--bs-theme-color);
+  }
+}
+
 #home-section .owl-carousel.home-slider .slider-item .slider-text h1 span {
   font-weight: 800;
   /* color titles ************************************************************************* */
   color: var(--bs-theme-color);
 }
-@media (max-width: 991.98px) {
+
+@media (max-width: 1000px) {
+  #home-section .owl-carousel.home-slider .slider-item .slider-text h1 span{
+    color: white;
+  }
+}
+
+/* @media (max-width: 991.98px) {
   #home-section .owl-carousel.home-slider .slider-item .slider-text h1 {
     color: #fff;
     font-size: 50px;
   }
-}
+} */
 @media (max-width: 767.98px) {
   #home-section .owl-carousel.home-slider .slider-item .slider-text h1 {
     font-size: 40px;
@@ -11640,11 +11662,17 @@ h2{
 }
 #home-section .owl-carousel.home-slider .slider-item .slider-text .btn-custom {
   /* border: 1px solid #0075f6; */
-  border: 1px solid #36016b;
+  border: 1px solid black;
   padding: 5px 20px;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 3px;
+}
+
+@media (max-width: 960px) {
+  #home-section .owl-carousel.home-slider .slider-item .slider-text .btn-custom{
+    border: 1px solid white;
+  }
 }
 
 #home-section .owl-carousel.home-slider .owl-nav {
@@ -11786,6 +11814,12 @@ h2{
   line-height: 1.2;
   font-weight: 400;
 }
+@media (max-width: 960px) {
+  #home-section .slider-text h1{
+    color: var(--bs-theme-color);
+  }
+}
+
 @media (max-width: 991.98px) {
   #home-section .slider-text h1 {
     font-size: 40px;
@@ -11876,10 +11910,11 @@ h2{
 }
 
 /* why section */
-
+#about{
+  background-color: white;
+}
 .about-section {
   padding-top: 10rem;
-  /*background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);*/
 }
 .about-section p {
   margin-bottom: 5rem;
@@ -12161,6 +12196,9 @@ h2{
   border-radius: 20px;
 }
 
+#fun{
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%);
+}
 
 #fun .ftco-animate {
   opacity: 0;
@@ -12209,7 +12247,14 @@ h2{
 }
 
 /* Friends section */
-
+#friends{
+   /* background colour ***************************************************** */
+   background: linear-gradient(to bottom, white 0%, whitesmoke 75%, whitesmoke 100%);
+   background-position: center;
+   background-repeat:repeat;
+   background-attachment: scroll;
+   background-size: cover;
+}
 
 .circle {
   border-radius: 50%;
@@ -12232,6 +12277,7 @@ h2{
   position:relative; 
   margin: auto;
 }
+
 
 .one {
   left: -300px;
@@ -12263,6 +12309,90 @@ h2{
   right: -300px;
   bottom: -200px;
 }
+
+@media (max-width: 576px) {
+  circle.big, .circle.big {
+    width: 70px;
+    height: 70px;
+  }
+  circle, .circle {
+    width: 120px;
+    height: 120px;
+  }
+  .one {
+    left: -175px;
+    top: -100px;
+  }
+  
+  .two {
+    top: -140px;
+    left: -25px;
+  }
+  
+  .three {
+    right: -175px;
+    top: -100px;
+  }
+  
+  .four {
+    left: -175px;
+    bottom: -100px;
+  }
+  
+  .five {
+    bottom: -100px;
+    left: -25px;
+  }
+  
+  .six {
+    right: -175px;
+    bottom: -100px;
+  }
+
+}
+
+
+@media (max-width: 720px) {
+  circle.big, .circle.big {
+    width: 70px;
+    height: 70px;
+  }
+  circle, .circle {
+    width: 120px;
+    height: 120px;
+  }
+  .one {
+    left: -175px;
+    top: -100px;
+  }
+  
+  .two {
+    top: -140px;
+    left: -25px;
+  }
+  
+  .three {
+    right: -175px;
+    top: -100px;
+  }
+  
+  .four {
+    left: -175px;
+    bottom: -100px;
+  }
+  
+  .five {
+    bottom: -140px;
+    left: -25px;
+  }
+  
+  .six {
+    right: -175px;
+    bottom: -100px;
+  }
+
+}
+
 
 
 .circle .overlay {
@@ -12310,8 +12440,9 @@ h2{
   font-size: 20px;
   /* my name colour ***************************************** */
   color: black;
-  
 }
+
+
 .circle .text h3 a {
   color: #fff;
 }
@@ -12368,6 +12499,12 @@ h2{
   /* Friends name colour *********************************** */
   color: #67c29c;
   text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  #friends a {
+    font-size:20px;
+ }
 }
 
 #friends {
@@ -12528,7 +12665,7 @@ input[type=radio] {
   }
 }
 
-#signup-section .player {
+/* #signup-section .player {
   background-color: #fff;
   border-radius: 8px;
   min-width: 320px;
@@ -12613,7 +12750,7 @@ input[type=radio] {
 #item-3:checked ~ .player #test  {
   transform: translateY(-80px);
 }
-
+ */
 /* footer */
 
 .footer {
