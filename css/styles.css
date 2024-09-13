@@ -11941,10 +11941,20 @@ h2{
   background-attachment: scroll;
   background-size: cover;
 }
-.signup-section .featured-text {
+
+/* .signup-section .featured-text {
   padding: 2rem;
   border-right: 0.5rem solid #64a19d;
 }
+ */
+ 
+@media (min-width: 992px) {
+  .signup-section .featured-text {
+    padding: 0 0 0 2rem;
+    border-right: 0.5rem solid #64a19d;
+  }
+}
+
 .signup-section .form-signup input {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
@@ -12650,15 +12660,9 @@ input[type=radio] {
 
 
 .pic-ctn {
-  width: 100vw;
+  width: 150vw;
   height: 200px;
   display: none;
-}
-
-@media (max-width: 991.5px) {
-  .pic-ctn {
-    display: flex;
-  }
 }
 
 @keyframes display {
@@ -12686,9 +12690,16 @@ input[type=radio] {
 
 .pic-ctn {
   position: relative;
-  width: 50vw;
+  width: 100vw;
   height: 300px;
   margin-top: 15vh;
+}
+
+@media (max-width: 991.5px) {
+  .pic-ctn {
+    display: flex;
+    width: 70%;
+  }
 }
 
 .pic-ctn > img {
