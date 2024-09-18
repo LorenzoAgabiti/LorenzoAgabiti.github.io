@@ -12552,6 +12552,13 @@ h2{
 
 
 /* Custom Icons */
+.salad_icon_big{
+  content: url('/assets/img/salad.png');
+  height: 100px;
+  width: 100px;
+  color: #008073;
+}
+
 
 .rome_icon {
   content: url('/assets/img/Rome.png');
