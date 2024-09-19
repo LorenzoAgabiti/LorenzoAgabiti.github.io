@@ -11688,7 +11688,7 @@ h2{
 #home-section .owl-carousel.home-slider .slider-item .slider-text .btn-custom {
   /* border: 1px solid #0075f6; */
   border: 1px solid black;
-  padding: 5px 20px;
+  padding: 5px 15px;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 3px;
@@ -12556,7 +12556,18 @@ h2{
   content: url('/assets/img/salad.png');
   height: 100px;
   width: 100px;
-  color: #008073;
+}
+
+.fish_icon_big{
+  content: url('/assets/img/fish.png');
+  height: 100px;
+  width: 100px;
+}
+
+.pasta_icon_big{
+  content: url('/assets/img/pasta.png');
+  height: 100px;
+  width: 100px;
 }
 
 
