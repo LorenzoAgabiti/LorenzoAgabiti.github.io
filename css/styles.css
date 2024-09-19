@@ -12568,10 +12568,9 @@ h2{
 }
 
 .rome_icon_big{
-  content: url('/assets/img/Rome.png');
+  content: url('/assets/img/rome_color.png');
   height: 100px;
   width: 100px;
-  color: #008073;
 }
 
 .paris_icon {
@@ -12582,10 +12581,9 @@ h2{
 }
 
 .paris_icon_big {
-  content: url('/assets/img/paris.png');
+  content: url('/assets/img/paris_color.png');
   height: 100px;
   width: 100px;
-  color: #008073;
 }
 
 
@@ -12597,10 +12595,9 @@ h2{
 }
 
 .italy_icon_big {
-  content: url('/assets/img/italy.png');
+  content: url('/assets/img/italy_color.png');
   height: 100px;
   width: 100px;
-  color: #008073;
 }
 
 .world_icon {
@@ -12611,10 +12608,9 @@ h2{
 }
 
 .world_icon_big {
-  content: url('/assets/img/world.png');
+  content: url('/assets/img/earth_color.png');
   height: 100px;
   width: 100px;
-  color: #008073;
 }
 
 .spotify_icon {
@@ -12625,10 +12621,9 @@ h2{
 }
 
 .spotify_icon_big {
-  content: url('/assets/img/spotify.png');
+  content: url('/assets/img/spotify_color.png');
   height: 100px;
   width: 100px;
-  color: #008073;
 }
 
 .youtube_icon {
@@ -12639,10 +12634,9 @@ h2{
 }
 
 .youtube_icon_big {
-  content: url('/assets/img/youtube.png');
+  content: url('/assets/img/youtube_color.png');
   height: 100px;
   width: 100px;
-  color: #008073;
 }
 
 .book_icon {
@@ -12666,6 +12660,19 @@ h2{
   color: #008073;
 }
 
+.cooking_icon {
+  content: url('/assets/img/chef.png');
+  height: 18px;
+  width: 18px;
+  color: #008073;
+}
+
+.ciak_icon {
+  content: url('/assets/img/clapperboard.png');
+  height: 18px;
+  width: 18px;
+  color: #008073;
+}
 
 /* carousel cities*/
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
