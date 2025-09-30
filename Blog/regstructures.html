@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Analytical theory of SDEs via Rough Paths</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+    src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <style type="text/css"> 
+        b.centered
+        {
+        text-align:center;
+        }
+    </style>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">Lorenzo Agabiti-Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/green_background.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>On "A theory of Regularity Structures"</h1>
+                        <span class="meta">Posted by <a href="#">Lorenzo Agabiti</a> on April 16, 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>
+                        Recommended papers:
+                    </p>
+                    
+
+                    <ul style="margin-left: 25px;">
+                        <li>Stochastic pdes, Regularity Structures, and interacting particle systems</em> by A. Chandra, H. Weber</li>
+                        <li>An introduction to the analytic theory of Regularity Structures</em> by L. Broux, F. Caravenna, L. Zambotti</li>
+                        <li>Regularity structures and the dynamical $\Phi^4_3$ model</em> by M. Hairer</li>
+                        <li>Recursive formulae in regularity structures</em> by Y. Bruned</li>
+                    </ul>
+                    <p>
+                        Intro reg structures, intro phi43
+                        Throughout these lectures, we will focus more on our second example, the dynamic $\Phi^4_d$ model. Formally this model is given by 
+                        
+                        \begin{align}\label{e:AC}
+                        \partial_t \phi(t,x) = \Delta \phi(t,x) - \phi^3(t,x) - m^{2} \phi(t,x) + \xi(t,x) \;.\tag{$ \Phi^4_d$}
+                        \end{align}
+                        
+                        Here the spatial variable $x$ takes values in a $d$-dimensional space and $\xi$ is again space-time white noise.
+                        
+
+                        <h3>Distributions and Scaling Behaviour</h3> 
+
+
+                        <h4>White noise</h4> 
+                        We start by defining space-time white noise $\xi$. Formally $\xi(t,x)$ is a random Gaussian function on $\mathbb{R} \times \mathbb{R}^{d}$, its covariance is given by
+                        \begin{align}\label{e:White_noise_covarianceformal}
+                        \mathbb{E} \left[ \xi(t,x) \xi(t^\prime,x^\prime) \right]= \delta(t-t^\prime) \, \delta^d(x - x^\prime) \;,
+                        \end{align}
+                        where $\delta^d$ denotes the $d$-dimensional Dirac $\delta$ distribution. However for any fixed $(t,x)$ one cannot rigorously interpret $\xi(t,x)$ as a random variable, there is no coordinate process. Instead $\xi$ must be interpreted as a random distribution, a random element of $\mathcal{S}^{\prime}(\mathbb{R} \times \mathbb{R}^d)$ whose law is centered Gaussian. For any $f \in \mathcal{S}^{\prime}(\mathbb{R} \times \mathbb{R}^d)$ and smooth test function $\eta$ on $\mathbb{R} \times \mathbb{R}^d$  we denote by $(f,\eta)$ the corresponding duality pairing. The quantity $(\xi,\bullet)$ 
+                        is then the analog of the coordinate process for $\xi$ and the rigorous definition is given by
+                        
+                        \begin{equation}\label{e:White_noise_covariance}
+                        \mathbb{E} \left[(\xi,\eta_{1}) (\xi,\eta_{2}) \right] = \int_{\mathbb{R} \times \mathbb{R}^d} 
+                        \eta_{1}(t,x)\eta_{2}(t,x)\, dt \; dx \;
+                        \end{equation}
+                        for any smooth $\eta_{1},\eta_{2}$.
+                        
+                        
+                        
+                        <br> <br>
+                        We will frequently be interested in the scaling behaviour of space-time distributions. Given a white noise $\xi$ and positive parameters $\tau, \lambda > 0$ we can <em>define</em> a new random distribution $\xi_{\tau,\lambda}$ via
+                        \begin{align*}
+                        (\xi_{\tau, \lambda}, \eta ) := (\xi, \mathcal{S}^{\tau,\lambda}\eta ) \,
+                        \end{align*} 
+                        where for any smooth function $\eta$ we have set $(\mathcal{S}^{\tau,\lambda}\eta)(t,x) := \tau^{-1} \lambda^{-d} \eta(\tau^{-1} t,\lambda^{-1}x)$. This is a simple rescaling operation, if $\xi$ was an actual function then this would amount to setting $\xi_{\tau,\lambda}(t,x) = \xi(\tau t, \lambda x)$.
+                        One has
+                        \begin{align}
+                        \mathbb{E}  \left[ ( \xi_{\tau, \lambda}, \eta )^2 \right] &= \int_{\mathbb{R} \times \mathbb{R}^d}  \tau^{-2} \lambda^{-2d}  \eta(\tau^{-1}t , \lambda^{-1} x)^2 \, dt \, dx \notag\\
+                        &= \tau^{-1}  \lambda^{-d}  \int_{\mathbb{R} \times \mathbb{R}^d} \eta(t,x)^{2}\, dt \; dx\;. \label{e:white_noise_scaling}
+                        \end{align}
+                        Since $\xi$ and $\xi_{\tau,\lambda}$ are centred Gaussian processes we can conclude that $\xi$ is scale invariant in distribution, in particular $ \xi_{\tau, \lambda} \overset{\text{law}}{=} \tau^{-\frac{1}{2}}\lambda^{-\frac{d}{2}} \xi$.
+
+                        <br> <br>
+                        <h4>Scaling Behaviour for SPDEs and Subcriticality</h4>
+                        \eqref{e:AC} is a non-linear perturbation of a linear SPDE called the stochastic heat equation (SHE)
+                        \begin{equation}\label{e:SHE}
+                        \partial_t Z(t,x) = \Delta Z(t,x) + \xi(t,x) \tag{SHE} \;
+                        \end{equation}
+                        where as before $(t,x) \in \mathbb{R} \times \mathbb{R}^{d}$. As before, $\xi$ cannot be evaluated pointwise and \eqref{e:SHE} has to be interpreted in the distributional sense.  Since \eqref{e:SHE} is linear it follows that the solution $Z$ will be Gaussian (for deterministic or Gaussian initial conditions).
+
+                        We now perform some formal computations to investigate the scaling behaviour of solutions \eqref{e:SHE}. For $\lambda > 0$ and suitable scaling exponents $\alpha, \beta,\gamma \in \mathbb{R}$ we define $\hat{Z}(t,x) := \lambda^{\alpha}Z(\lambda^{\beta} t, \lambda^\gamma x)$ and $\hat{\xi} := \lambda^{ \frac{\beta}{2}} \lambda^{ \frac{d\gamma }{2}} \xi_{\lambda^\beta, \lambda^\gamma }$, it then follows that
+                        
+                        \begin{equation}
+                        \partial_t \hat{Z} =  \lambda^{\beta - 2 \gamma} \Delta \hat{Z} + \lambda^{\alpha + \frac{\beta}{2} - \frac{d\gamma}{2}} \hat{\xi} \;.
+                        \end{equation}
+                        We have already shown that $\hat{\xi} \overset{\text{law}}{=} \xi$. Therefore, if we set
+                        
+                        \begin{equation}\label{e:scalinG}
+                        \alpha = \frac{d}{2}-1 \;,  \qquad    \beta = 2\;,   \qquad \text{and} \qquad \gamma =1 \;
+                        \end{equation}
+                        
+                        then we see that $\hat{Z} \overset{\text{law}}{=} Z$ (ignoring boundary conditions) so the solution to \eqref{e:SHE} is also scale invariant.
+
+                        <br> <br>
+                        In general non-linear equations like \eqref{e:AC} will not be scale invariant.  If one rescales these equations according to the exponents found above then the non-linearity will be multiplied by a prefactor which is some power of $\lambda$; the assumption of subcriticality then requires that this prefactor vanish as $\lambda \rightarrow 0$. Roughly speaking, this condition enforces that the solutions \eqref{e:AC}  behave like the solution to the \eqref{e:SHE} on small scales. 
+                        We perform the same scaling as in \eqref{e:SHE}, for this discussion the mass term $m^2\phi$ is irrelevant so we drop it. Setting $\hat{\phi}(t,x) = \lambda^{\frac{d}{2}-1} \phi( \lambda^2t,  \lambda x)$ we get
+                        
+                        \begin{align*}
+                        \partial_t \hat{\phi}(t,x) = \Delta \hat{\phi} (t,x) -  \lambda^{4-d}\hat{\phi}^3  + \hat{\xi} \;.
+                        \end{align*}
+                        
+                        If the spatial dimension $d$ is strictly less than $4$ the prefactor $\lambda^{4-d}$ vanishes in the limit $\lambda \to 0$. We call $d < 4$ the subcritical
+                        regime. If $d=4$ the prefactor $\lambda^{4-d} = 1$; this is the critical regime. The regime $d\geq5$ is called the supercritical regime.  
+
+                        The main result of "A theory of regularity structures" can roughly be paraphrased as follows.
+                         
+                    </p>
+                    <p>
+                        Assume that SPDE is subcritical.<br> <br>
+                        We assume that $x$ takes values in a compact subset of $\mathbb{R}^d$ with some boundary conditions. Furthermore, we prescribe an initial condition $u_0$ which has the same spatial regularity as we expect for the solution $u$. 
+
+                        There is a natural notion of solution and such solutions exist and are unique on a time interval $[0,T)$ for some random $T>0$.
+                    </p>
+                    
+                    <h3>The need for renormalisation</h3>
+                    <p>
+                        We must clarify what is meant by solution theory and uniqueness. Classical solution theories for SPDEs do not apply here since the solutions are too irregular. 
+                        For \eqref{e:AC} the solution theory was already fairly understood only in $d=1$ - there $\phi$ is $\alpha$-Holder for every $\alpha < \frac12$ which is largely sufficient to define $\phi^3$. In the cases $d=2,3$  the subcriticality assumption still applies but $\phi$ will not be regular enough to be a function.
+
+                        <br> <br>
+                        A natural way to try to interpret nonlinear expressions involving highly irregular objects is regularization. In the context of our singular SPDE this means that if we show that solutions of regularized} equations converge to some object as we remove the regularization then we can define this limiting object as the solution of the SPDE.
+                        Unfortunately this naive approach does not work, the solutions to the regularized equations will either fail to converge or converge to an uninteresting limit. We use the dynamic $\Phi^4_2$ model as a concrete example of this. One natural regularization consists of replacing $\xi$ by a smoothened  noise process. Let $\rho$ be a smooth function on $\mathbb{R} \times \mathbb{R}^{d}$ which integrates to $1$. For $\delta >0$ we set 
+                        \begin{equation}\label{e:eta_delta}
+                        \rho_\delta(t,x) :=\delta^{- (2 + d) }   \rho(\delta^{-2} \, t, \delta^{-1 } \,x )  \;.
+                        \end{equation}
+                        We use the parabolic scaling $\delta^{-2}t$ and $\delta^{-1}x$ since it will be a convenient choice for later examples.
+                        
+                        For any $\delta > 0$ we define the regularized noise $\xi_\delta  := \xi \star \rho_\delta$ where $\star$ indicates space-time convolution. 
+                        In order to obtain a non-trivial limit the equation has to be modified in a $\delta$ dependent way. We will see that in dimensions $d=2,3$ if one considers
+                        
+                        \begin{align}\label{e:less_naive1}
+                        \partial_t \phi_\delta = \Delta \phi_\delta - (\phi_\delta^3 - 3 \mathfrak{c}_\delta \phi_\delta) + \xi_\delta \; ,
+                        \end{align}
+                        
+                        for a suitable dimension dependent choice of renormalisation constants $\mathfrak{c}_\delta$, then the solutions $\phi_\delta$ do indeed converge to a non-trivial limit $\phi$. This constant $\mathfrak{c}_{\delta}$ will diverge as $\delta \downarrow 0$. In $d=2$ one can take $C_1 \log(\delta^{-1})$ for a specific constant $C_1$, while for $d=3$ one can take $\mathfrak{c}_\delta = C_1 \delta^{-1} + C_2 \log(\delta^{-1})$ for specific constants $C_{1},C_{2}$ where $C_{1}$ depends on the choice of $\rho$.
+                        
+                        
+
+                        <br> <br>
+                        We now turn to discussing uniqueness for these SPDE. For a fixed subcritical equation one can choose different renormalization schemes which yield different families of renormalized equations and different corresponding renormalized solutions.
+                    </p>
+                    <h3>Regularity</h3>
+                    <p>
+                        The functional spaces we use in these notes are a generalization of the usual family of Holder spaces, these spaces will be denoted by $\mathcal{C}^{\alpha}$ where $\alpha$ is the analog of the Holder exponent. We will measure space-time regularity in a parabolic sense which is why we write $\mathfrak{s}$ in the subscript of $\mathcal{C}^{\alpha}$ (the $\mathfrak{s}$ stands for ``scaled"). For $z, z' \in \mathbb{R} \times \mathbb{R}^{d}$ we denote by $|| z' - z||_{\mathfrak{s}}$ the parabolic distance between $\bar{z}$ and $z$. Writing $z' = (t',x')$ and $z = (t,x)$ we set
+                        \[
+                        ||z' - z||_{\mathfrak{s}} := 
+                        |t' - t|^{\frac{1}{2}}
+                        +
+                        \sum_{j=1}^{d} |x_{j}' - x_{j}|.
+                        \]
+                        Below it will also be useful to have the notion of  scaled dimension} $d_{\mathfrak{s}} = d+2$ for space-time $\mathbb{R} \times \mathbb{R}^d$, i.e. the time variable counts for two dimensions.
+                        <br> <br>
+                        
+                        <b> Definition:</b>
+                        For $\alpha \in (0,1)$ the space $\mathcal{C}^{\alpha}(\mathbb{R} \times \mathbb{R}^{d})$ consists of all continous functions $u \colon \mathbb{R} \times \mathbb{R}^d \rightarrow \mathbb{R}$ such for every compact set $\mathfrak{K} \subset \mathbb{R} \times \mathbb{R}^d$ one has 
+
+                        \begin{align}\label{holdernorm}
+                        \sup_{ 
+                        \substack{ z,z' \in \mathfrak{K}\\ z \not = z' }
+                        }
+                        \frac{\left|u(z) - u(z') \right|}{ ||z - z'||^{\alpha}_{\mathfrak{s}} }
+                        <
+                        \infty\;.
+                        \end{align}
+
+                        In order to accomodate distributions we will want an analog of Holder spaces where $\alpha$ is allowed to be negative. A natural choice are the (parabolically scaled) Besov spaces $\{ \mathcal{B}_{\infty, \infty}^\alpha \}_{\alpha \in \mathbb{R}}$. In particular these spaces agree with our earlier definition for $\alpha \in (0,1)$. In analogy to the positive Holder spaces we still denote these Besov spaces by $\mathcal{C}^{\alpha}$ when $\alpha < 0$.
+
+                        There are several ways to characterise these Besov spaces (including Paley-Littlewood decomposition or wavelet decompositions). For these notes we use a simple definition that is convenient for our purposes. 
+                        <br><br>
+                        <b>Definition:</b>
+                        Suppose that $\alpha < 0$. We define $\mathcal{C}^{\alpha}$ to be the set of all distributions $u \in \mathcal{S}'(\mathbb{R}^{d+1})$ such that for any compact set $\mathfrak{K} \subseteq \mathbb{R} \times \mathbb{R}^d$ one has
+                        \begin{equation*}
+                        ||u||_{\mathcal{C}^{\alpha}(\mathfrak{K})}
+                        :=
+                        \sup_{z \in \mathfrak{K}}
+                        \sup_{
+                        \substack{
+                        \eta \in B_{r} \\
+                        \lambda \in (0,1]}
+                        }
+                        \left|
+                        \frac{
+                        \langle u , \mathcal{S}_z^\lambda \eta \rangle 
+                        }
+                        {\lambda^{\alpha}}
+                        \right|
+                        <
+                        \infty
+                        \end{equation*}
+                        where have set $r = \lceil -\alpha \rceil$ and
+                        \begin{equation}\label{e:scaledFunction}
+                        \mathcal{S}_z^\lambda \eta(s,y) :=  \lambda^{-d-2} \;\eta\big(\lambda^{-2}(s-t), \lambda^{-1}(y-x)  \big) \;.
+                        \end{equation}
+                        One can adapt the definition to the case $\alpha > 0$. We first need to define the parabolic degree of a polynomial. Given a multindex $ k = (k_{0},k_{1},\dots,k_{d}) \in \mathbf{N} \times \mathbf{N}^{d}$ we define the monomial $z^{k}$ in the standard way, we also define the parabolic degree of this monomial to be $|k|_{\mathfrak{s}}:= 2k_{0} + \sum_{j=1}^{d} k_{j}$. We then define the parabolic degree of a polynomial $P(z)$ to be the maximum of the parabolic degree of all of its constituent monomials.
+                        <br><br>
+                        <b>Definition:</b>
+                        Suppose that $\alpha \ge 0$. We define $\mathcal{C}^{\alpha}$ to be the set of all functions $u \in \mathcal{S}'(\mathbb{R}^{d+1})$ such that there exist polynomials $\{P_{z}\}_{z \in \mathbb{R}^{d+1}}$, each of parabolic degree less than $\alpha$, such that for any compact set $\mathfrak{K} \subseteq \mathbb{R} \times \mathbb{R}^d$ one has
+                        \begin{equation}
+                        ||u||_{\mathcal{C}^{\alpha}(\mathfrak{K})}
+                        :=
+                        \sup_{z \in \mathfrak{K}}
+                        \sup_{
+                        \substack{
+                        \eta \in B_{0} \\
+                        \lambda \in (0,1]}
+                        }
+                        \left|
+                        \frac{
+                        \langle u - P_{z}, \mathcal{S}_z^\lambda \eta \rangle 
+                        }
+                        {\lambda^{\alpha}}
+                        \right|
+                        <
+                        \infty.
+                        \end{equation}
+
+                        We now investigate the regularity of space-time white noise. We have by The following ``Kolmogorov like" theorem: 
+                        <br><br>
+                        <b>Theorem(Kolmogorov):</b>
+                        $\xi$ has regularity $\mathcal{C}^{-\frac{d}{2}-1 - \kappa}$ for every $\kappa>0$.
+                   </p>
+                   <h3>Linear Theory</h3>
+                   <p>
+
+                   </p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="https://www.linkedin.com/in/lorenzo-agabiti-918465251/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x" style="color: #50817e;"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/LorenzoAgabiti" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x" style="color: #50817e;"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

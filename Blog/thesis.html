@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Analytical theory of SDEs via Rough Paths</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+    src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <style type="text/css"> 
+        b.centered
+        {
+        text-align:center;
+        }
+    </style>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">Lorenzo Agabiti-Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/green_background.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Analytical theory of SDEs via Rough Paths</h1>
+                        <span class="meta">Posted by <a href="#">Lorenzo Agabiti</a> on May 8, 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>
+                        This an easy introduction to the theory of rough paths, a tool used to solve differential equations driven by a very rough function. It is quite surprisingly a fully analytical theory and has been the starting point for solving some of the most important singular spdes.
+                    </p>
+                    <p>
+                        I will show some of the results that we obtained in a recent work.
+                    </p>
+                    <p>
+                        Let us fix the dimensions $k,d>0$ and a time horizon $T>0$. Take a path $X:[0,T]\rightarrow\mathbb{R}^d$ and a continuous function $\sigma:\mathbb{R}^k\rightarrow\mathbb{R}^k\otimes(\mathbb{R}^d)^*$. We consider the controlled ODE in the form
+                        $$\dot{Z}_t=\sigma(Z_t)\dot{X}_t,$$
+                        for a path $Z:[0,T]\rightarrow\mathbb{R}^d$.
+                    </p>
+                    <p>
+                        What can we do when the driving path $X$ is continuous but not continuously differentiable?
+                    </p>
+                    <p>
+                        Think of $X=B$ Brownian Motion.
+                    </p>
+                    <p>
+                        For $X\in C^1,$
+                        \begin{align*}
+                            Z_t-Z_s&=\int_s^t\sigma(Z_u)\dot{X}_u\\
+                                    &=\sigma(Z_s)(X_t-X_s)+\int_s^t(\sigma(Z_u)-\sigma(Z_s))\dot{X}_u du.
+                        \end{align*}
+                        Then, for $\sigma_2(z):=\nabla\sigma(z)\sigma(z)$ locally Lipschitz
+                        \begin{align*}
+                            \sigma(Z_u)-\sigma(Z_s)&=\sigma_2(Z_s)(X_u-X_s)+\int_s^u(\sigma_2(Z_r)-\sigma_2(Z_s))\dot{X}_r dr\\
+                            &=\sigma_2(Z_s)(X_u-X_s)+O((u-s)^2).
+                        \end{align*}
+                        We can define the difference equation
+                        $$Z_t-Z_s=\sigma(Z_s)(X_t-X_s)+\sigma_2(Z_s)\int_s^t(X_u-X_s)\otimes\dot{X}_r dr+o(t-s).$$
+                    </p>
+                    <b class="centered">
+                        Iterate!
+                    </b>
+                    <p>
+                        Defining 
+                        $$\sigma_1(z):=\sigma(z), \qquad \sigma_{i+1}(z):=\nabla\sigma_i(z)\sigma(z),$$
+                        and
+                        $$\mathbb{X}_{st}^{(0)}:=1 \qquad \mathbb{X}_{st}^{(i+1)}:=\int_s^t\mathbb{X}_{su}^{(i)}\otimes\dot{X}_u du,$$
+                        write
+                        $$Z_t-Z_s=\sum_{i=1}^n\sigma_i(Z_s)\mathbb{X}_{st}^{(i)}+o(t-s).$$
+                    </p>
+                    <p>
+                        $\mathbb{X}^{(i)}$ still depends on $\dot{X}$ $\implies$ need to find approximating functions:
+                    </p>
+                    <b class="text-align: center">
+                        Rough Paths!
+                    </b>
+                    <p>
+                        Fix $X:[0,T]\rightarrow\mathbb{R}^d$ of class $\mathcal{C}^\alpha$ for $\alpha\in(\frac{1}{n+1},\frac{1}{n}]$ and $d\in\mathbb{N}$.
+                        We call a $d$-dimensional $\alpha$-rough path over $X$ a family $\mathbb{X}=(\mathbb{X}^{(1)},...,\mathbb{X}^{(n)})$ of functions $\mathbb{X}^{(i)}:[0,T]_{\leq}^2\rightarrow\mathbb{R}^{\otimes i}$ such that, for $0\leq u\leq s\leq t\leq T$, $i\in{1,...,n}$,
+                        \begin{align*}
+                            \mathbb{X}_{st}^{(1)}&:=X_t-X_s,\\
+                            \mathbb{X}_{st}^{(i)}&=\sum_{j=0}^i\mathbb{X}_{su}^{(i-j)}\otimes\mathbb{X}_{ut}^{(j)},\qquad (Chen's \,relation)\\
+                            |\mathbb{X}_{st}^{(i)}|&\lesssim|t-s|^{i\alpha}.
+                        \end{align*}
+                    </p>
+                    <p>
+                        We can now redefine our difference equation.
+                        Let $X\in \mathcal{C}^{\alpha}$ for $\alpha\in(\frac{1}{n+1},\frac{1}{n}]$ and let
+                        $\mathbb{X}=(\mathbb{X}^{(1)},\cdots,\mathbb{X}^{(n)})$ be an $\alpha$-rough path over $X$. Then, for $0\leq s\leq t \leq T$, we have the Rough Difference Equation 
+                        $$\delta Z_{st}=\sum_{i=1}^n\sigma_i(Z_s)\mathbb{X}^{(i)}_{st}+o(t-s).$$ 
+                    </p>
+                    <p>
+                        Define $T((\mathbb{R}^d)^*):=\bigoplus_{n\geq 0}((\mathbb{R}^d)^*)^{\otimes n}$. We have 
+                    </p>
+                    <p>
+                         Let us take  $\mathbb{X}=(\mathbb{X}^{(1)},...,\mathbb{X}^{(n)})$, a $d$-dimensional $\alpha$-rough path over $X$. $\mathbb{X}$ is called a Geometric Rough Path if
+                        $$\langle\mathbb{X},v &#10722 w\rangle=\langle\mathbb{X},v\rangle\langle\mathbb{X},w\rangle \quad \forall v,w\in T((\mathbb{R}^d)^*),$$
+                        where &#10722 is the shuffle product.
+                    </p>
+                    <p>
+                        When $n=2$ the definition reduces to $(\mathbb{X}^{(2)}_{st})^{ij}+(\mathbb{X}^{(2)}_{st}) ^{ji}=(\mathbb{X}^{(1)}_{st})^i(\mathbb{X}^{(1)}_{st}) ^j.$
+                    </p>
+                    <p>
+                        \begin{align*}
+                        v_1v_2&#10722w_1w_2&=v_1v_2w_1w_2+v_1w_1v_2w_2+v_1w_1w_2v_2\\
+                        &+w_1v_1v_2w_2+w_1v_1w_2v_2+w_1w_2v_1v_2.
+                        \end{align*}
+                    </p>
+                    <p>
+                        Analytical theory built to prove well-posedness for $X\in\mathcal{C}^{\alpha}$ Hölder continuous for $\alpha\in(\frac{1}{3},\frac{1}{2}]$
+                        Want to extend to $X\in\mathcal{C}^{\alpha}$ Hölder continuous for $\alpha\in(\frac{1}{n+1},\frac{1}{n}]$ for generic $n$.
+                    </p>
+                    <p>
+                        There is a relationship between $\sigma_n$ and rooted trees:
+                        $$\sigma_n=\sum_{|\tau|=n}\alpha(\tau)\tau,$$
+                        where we sum over the rooted trees of order $n$ and $\alpha$ is the Connes-Moscovici coefficient.
+                    </p>
+                    <p>
+                        We have $$\sigma_{n+1}=\bullet \curvearrowright \sigma_n,$$
+                        where $\curvearrowright$ is the grafting operator.
+                    </p>
+                    <p>
+                        <img class="img-responsive" src="img/esempio_alberi (1).png" alt="">
+                    </p>
+                    <p>
+                        If $[\cdots]$ is the operator that attaches trees to a single root, the example shows that
+                        $$\sigma_3=[\sigma,\sigma]+[\sigma_2], \qquad \sigma_4=[\sigma,\sigma,\sigma]+3[\sigma,\sigma_2]+[\sigma_3].$$
+                        This motivates the following theorem.
+                    </p>
+                    <p>
+                        For $n\geq2$
+                        $$\sigma_n=\sum_{k=1}^{n-1}\sum_{\substack{l_1 &lt \cdots &lt l_k\\\sum_im_il_i=n-1}}C(k,l,m)[\sigma_{l_k}^{m_k},\cdots,\sigma_{l_1}^{m_1}],$$
+                        where $$C(k,l,m)=\frac{1}{m_k!\cdots m_1!}\frac{(l_km_k+\cdots+l_1m_1)!}{(l_k!)^{m_k}\cdots(l_1!)^{m_1}}.$$
+                    </p>
+                    <p>
+                        With the help of the last result we can state the following fundamental theorem.
+                    </p>
+                    <p>
+                        Let $\mathbb{X}=(\mathbb{X}^{(1)},\cdots,\mathbb{X}^{(n)})$ be a geometric rough path. We have for $z\in\mathbb{R}^k.$
+                        $$\sigma_{n+1}(z)\mathbb{X}^{(n)}=\sum_{k=1}^n\frac{\nabla^k\sigma(z)}{k!}\sum_{\substack{(l_1,\cdots,l_k)\\\sum_il_i=n}}\prod_{i=1}^k\sigma_{l_i}(z)\mathbb{X}^{(l_i)}_{st}.$$
+                    </p>
+                    <p>
+                        We state the following fundamental bound.
+                        Take $R\in C([0,T]_{\leq}^2,\mathbb{R}^k)$ such that $R_{st}=o(t-s)$. Then for any $\eta\in(1,\infty)$, $\tau>0$,
+                        $$\|R\|_{\eta,\tau}\leq K_{\eta}\|\delta R\|_{\eta,\tau},$$
+                        where $\delta R_{sut}:=R_{st}-R_{su}-R_{ut}$, \quad $K_{\eta}:=(1-2^{1-\eta})^{-1}$ and $$\|R\|_{\eta,\tau}:=\sup_{0\leq s\leq t\leq T}
+                        \mathbb{1}_{\{0 &lt t-s\leq \tau\}}e^{-\frac{t}{\tau}}\frac{|R_{st}|}{(t-s)^{\eta}}.$$
+                        We call $\|\cdot\|_{\eta,\tau}$ a weighted norm. It is useful to pass from local to global results.
+                    </p>
+                    <p>
+                        We define $Z^{[m]}:=\delta Z-\sum_{i=1}^{m-1}\sigma_i(Z)\mathbb{X}^{(i)}.$
+                        $Z$ solution $\iff Z^{[n+1]}=o(t-s)$
+                        By the Weighted Sewing Bound
+                        $$\|Z^{[n+1]}\|_{(n+1)\alpha,\tau}\leq\|\delta Z^{[n+1]}\|_{(n+1)\alpha,\tau}.$$
+                        \textbf{Idea}: find bounds on $\|\delta Z^{[n+1]}\|_{(n+1)\alpha,\tau}$ to get some a priori estimates.
+                    </p>
+                    <p>
+                        We have $$\delta Z^{[n+1]}_{sut}=\sum_{i=1}^n\bigg(\sigma_i(Z_u)-\sigma_i(Z_s)-\sum_{j=i+1}^n\sigma_j(Z_s)\mathbb{X}_{su}^{(j-i)}\bigg)\otimes \mathbb{X}_{ut}^{(i)}.$$      
+                        $\implies$Need to bound the RHS
+                        For $n=2$,
+                        $$Z^{[3]}_{sut}=\bigg(\sigma(Z_u)-\sigma(Z_s)-\sigma_2(Z_s)\mathbb{X}_{su}^{(1)}\bigg)\otimes \mathbb{X}_{ut}^{(1)}+\bigg(\sigma_2(Z_u)-\sigma_2(Z_s)\bigg)\otimes \mathbb{X}_{ut}^{(2)}.$$
+                    </p>
+                    <p>
+                        $$\sigma(Z_u)-\sigma(Z_s)-\sigma_2(Z_s)\mathbb{X}_{su}^{(1)}=\nabla \sigma(Z_s)Z^{[2]}_{su}+\int_0^1[(\nabla\sigma(Z_s+r_1\delta Z_{su})-\nabla\sigma(Z_s))\delta Z_{su}]dr_1,$$
+                        and
+                    <p>
+                        \begin{align*}
+                            \sigma(Z_u)-\sigma(Z_s)-\sigma_2(Z_s)&\mathbb{X}_{su}^{(1)}=\int_0^1[(\sigma_2(Z_s+r_1\delta Z_{su})-\sigma_2(Z_s))\mathbb{X}_{su}^{(1)}]dr_1\\
+                            &+\int_0^1[\nabla \sigma(Z_s+r_1\delta Z_{su})Z^{[2]}_{su}]dr_1\\
+                            &-\int_0^1\nabla \sigma(Z_s+r_1\delta Z_{su})\bigg(\int_0^{r_1}[\nabla \sigma(Z_s+r_2\delta Z_{su})]\delta Z_{su}\mathbb{X}^{(1)}_{su}dr_2\bigg)dr_1.
+                        \end{align*}
+                    </p>
+                    <b class="justify-content-center">
+                        What for generic n?
+                    </b>
+                    <p>
+                        Using the Theorem of the Geometric Rough Path decomposition we can write the following identity.
+                    </p>
+                    <p>
+                        Let us take a geometric rough path $\mathbb{X}=(\mathbb{X}^{(1)},\cdots,\mathbb{X}^{(n)})$. We have
+                            \begin{align*}
+                                \sigma(Z_u)-&\sigma(Z_s)-\sum_{j=2}^n\sigma_j(Z_s)\mathbb{X}_{su}^{(j-1)}\\ &=\sum_{k=1}^n\sum_{\substack{(l_1,\cdots, l_k)\\\sum l_i=n}}\int_0^1\int_0^{r_1}\cdots\int_0^{r_{k-1}}\nabla^k\sigma(Z_s+r_k\delta Z_{su})Z_{su}^{[l_1]}\otimes\prod_{j=2}^k\sigma_{l_j}(Z_s)\mathbb{X}_{su}^{(l_j)}dr_k\cdots r_1.
+                            \end{align*}
+                    </p>
+
+                    <p>
+                        The main result of the project is uniqueness of solution for the general rough difference equation.
+                    </p>
+                    <p>
+                        Let $X$ be a path in $\mathcal{C}^\alpha$, $\alpha\in(\frac{1}{n+1},\frac{1}{n}]$, let $\mathbb{X}=(\mathbb{X}^{(1)},\cdots,\mathbb{X}^{(n)})$ be an $\alpha$-geometric rough path over $X$, let $\sigma$ be of class $C^n$ with $\nabla^n\sigma$ locally Lipshitz. Then, for every $z_0\in\mathbb{R}^k$, the rough difference equation admits a unique solution $Z$ such that $Z_0=z_0$.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="https://www.linkedin.com/in/lorenzo-agabiti-918465251/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x" style="color: #50817e;"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/LorenzoAgabiti" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x" style="color: #50817e;"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
