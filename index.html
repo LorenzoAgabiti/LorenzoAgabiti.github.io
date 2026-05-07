@@ -9,14 +9,6 @@
         <title>Lorenzo Agabiti - Personal Website</title>
         <link rel="icon" type="image/x-icon" href="assets/img/geometrical-shape.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="css/shake.css" />
-        <link rel="stylesheet" href="css/animate.css" />
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-	    <link rel="stylesheet" href="css/aos.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
 
         <!-- Font Awesome icons (free version)-->
         <!-- Google fonts-->
@@ -31,7 +23,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="cookingModalLabel">Cooking</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -64,7 +56,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -75,7 +67,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="mapsModaltitle">Maps</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Closemaps">
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Closemaps">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -114,7 +106,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -125,7 +117,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="mapsModaltitle">Music</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Closemaps">
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Closemaps">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -152,7 +144,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -163,7 +155,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="miscModalLabel">Miscellany</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -195,7 +187,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -225,83 +217,311 @@
         </nav>
 
         <section id="home-section" class="hero">
-            <div class="home-slider  owl-carousel">
-                <div class="slider-item ">
-                    <div class="overlay"></div>
-                    <div class="container">
-                        <div class="row d-flex no-gutters slider-text align-items-end justify-content-end"
-                            data-scrollax-parent="true">
-                            <div class="one-third order-md-last img" style="background-image:url(assets/img/cover.jpg); ">
-                                <div class="overlay"></div>
-                            </div>
-                            <div class="one-forth d-flex  align-items-center ftco-animate"
-                                data-scrollax=" properties: { translateY: '10%' }">
-                                <div class="text">
-                                    <h2 class="shake">🖐️</h2>
-                                    <span class="subheading"><strong>Hello</strong></span>
-                                    <h1 class="mb-4 mt-3 mt-3">
-                                        I'm
-                                        <span>Lorenzo <br/>
-                                            Agabiti</span>
-                                    </h1>
-                                    <p>
-                                        <a href="https://drive.google.com/file/d/1LYh2kOZsxG7gUFOkKJIkCzyYN-QSgn_R/view?usp=sharing"
-                                            target="_blank" class="btn-custom"><strong>Download CV</strong></a>
-                                    </p>
-                                </div>
-                            </div>
+            <div class="hs-slider" id="hsSlider">
+
+                <!-- Slide 1: Generative stochastic path canvas -->
+                <div class="hs-slide active" id="hsSlide1">
+                    <canvas id="hsCanvas"></canvas>
+                    <div class="hs-overlay hs-overlay-dark"></div>
+                    <div class="hs-content">
+                        <div class="hs-content-inner">
+                            <span class="hs-eyebrow">Paris · Mathematics · 2026</span>
+                            <h1 class="hs-title">
+                                <span class="hs-title-line">Lorenzo</span>
+                                <span class="hs-title-line hs-title-outline">Agabiti</span>
+                            </h1>
+                            <div class="hs-rule"></div>
+                            <a href="https://drive.google.com/file/d/1LYh2kOZsxG7gUFOkKJIkCzyYN-QSgn_R/view?usp=sharing"
+                               target="_blank" class="hs-cv">Download CV ↗</a>
                         </div>
                     </div>
                 </div>
-    
-                <div class="slider-item">
-                    <div class="overlay"></div>
-                    <div class="container">
-                        <div class="row d-flex no-gutters slider-text align-items-end justify-content-end"
-                            data-scrollax-parent="true">
-                            <div class="one-third order-md-last img" style="background-image:url(assets/img/foto_palazzina.jpg);">
-                            <!-- <div class="one-third order-md-last img-cover-small" style="background-image:url(assets/img/foto_palazzina.jpg); "> -->
-                                <div class="overlay"></div>
-                            </div>
-                            <!-- </div> -->
-                            <div class="one-forth d-flex align-items-center ftco-animate"
-                                data-scrollax=" properties: { translateY: '70%' }">
-                                <div class="text">
-                                    <h1 class="mb-4 mt-3">I'm a <span>PhD student in Mathematics</span></h1>
-                                    <p>
-                                        <a href="https://drive.google.com/file/d/1LYh2kOZsxG7gUFOkKJIkCzyYN-QSgn_R/view?usp=sharing"
-                                            target="_blank" class="btn-custom"><strong>Download CV</strong></a>
-                                    </p>
-                                </div>
-                            </div>
+
+                <!-- Slide 2: Convergence — same canvas, different text -->
+                <div class="hs-slide" id="hsSlide2">
+                    <div class="hs-overlay hs-overlay-dark"></div>
+                    <div class="hs-content">
+                        <div class="hs-content-inner">
+                            <span class="hs-eyebrow">Sorbonne University · LPSM</span>
+                            <h1 class="hs-title hs-title-sm">
+                                <span class="hs-title-line">PhD student</span>
+                                <span class="hs-title-line hs-title-outline">in Mathematics</span>
+                            </h1>
+                            <div class="hs-rule"></div>
+                            <p class="hs-sub">Stochastic Differential Equations<br>Theory of Rough Paths</p>
+                            <a href="https://drive.google.com/file/d/1LYh2kOZsxG7gUFOkKJIkCzyYN-QSgn_R/view?usp=sharing"
+                               target="_blank" class="hs-cv">Download CV ↗</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Progress bar -->
+                <div class="hs-progress"><div class="hs-progress-bar" id="hsProgressBar"></div></div>
+
+                <!-- Dots -->
+                <div class="hs-dots" id="hsDots">
+                    <button class="hs-dot active" aria-label="Slide 1"></button>
+                    <button class="hs-dot"        aria-label="Slide 2"></button>
+                </div>
+
+                <!-- Counter -->
+                <div class="hs-counter"><span id="hsCurrent">01</span> / 02</div>
+
+                <!-- Scroll hint -->
+                <div class="hs-scroll-hint">
+                    <span>Scroll</span>
+                    <div class="hs-scroll-line"></div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Masthead-->
-        <!-- <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-0 my-0 text-uppercase">hbksdbk</h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">lksakdalk.</h2>
-                    </div>
-                </div>
-            </div>
-        </header> -->
+        <script>
+        /* ── Slider logic ───────────────────────────────────────────── */
+        (function () {
+            var slider   = document.getElementById('hsSlider');
+            if (!slider) return;
+            var slides   = slider.querySelectorAll('.hs-slide');
+            var dots     = slider.querySelectorAll('.hs-dot');
+            var bar      = document.getElementById('hsProgressBar');
+            var curEl    = document.getElementById('hsCurrent');
+            var idx      = 0;
+            var total    = slides.length;
+            var duration = 7000;
+            var prog, timer;
+
+            function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+            function goTo(n) {
+                slides[idx].classList.remove('active');
+                dots[idx].classList.remove('active');
+                idx = (n + total) % total;
+                slides[idx].classList.add('active');
+                dots[idx].classList.add('active');
+                curEl.textContent = pad(idx + 1);
+                resetProgress();
+                /* tell the canvas which phase we're in */
+                if (window.hsSetPhase) window.hsSetPhase(idx);
+            }
+
+            function resetProgress() {
+                bar.style.transition = 'none';
+                bar.style.width = '0%';
+                clearTimeout(prog);
+                prog = setTimeout(function () {
+                    bar.style.transition = 'width ' + duration + 'ms linear';
+                    bar.style.width = '100%';
+                }, 30);
+            }
+
+            dots.forEach(function (d, i) {
+                d.addEventListener('click', function () { goTo(i); clearInterval(timer); startAuto(); });
+            });
+
+            var tx = 0;
+            slider.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+            slider.addEventListener('touchend', function (e) {
+                var dx = e.changedTouches[0].clientX - tx;
+                if (Math.abs(dx) > 40) { goTo(idx + (dx < 0 ? 1 : -1)); clearInterval(timer); startAuto(); }
+            }, { passive: true });
+
+            function startAuto() {
+                clearInterval(timer);
+                timer = setInterval(function () { goTo(idx + 1); }, duration);
+            }
+
+            resetProgress();
+            startAuto();
+        })();
+
+        /* ── Two-phase stochastic canvas ────────────────────────────── */
+        (function () {
+            var canvas = document.getElementById('hsCanvas');
+            if (!canvas) return;
+            var ctx = canvas.getContext('2d');
+
+            var TEAL      = '#64a19d';
+            var TEAL_DIM  = 'rgba(100,161,157,0.35)';
+            var BG        = '#0d1117';
+            var GRID      = 'rgba(100,161,157,0.05)';
+
+            var phase     = 0;   /* 0 = chaos, 1 = convergence */
+            var phaseAge  = 0;   /* frames since phase changed */
+            var CONVERGE_FRAMES = 180; /* frames to reach full calm */
+
+            window.hsSetPhase = function (p) {
+                phase    = p;
+                phaseAge = 0;
+            };
+
+            /* Each path: independent Brownian walk that keeps growing */
+            var NUM_PATHS  = 5;
+            var paths      = [];
+
+            function resize() {
+                canvas.width  = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+
+            /* Target y-positions for the convergence phase */
+            function targetY(i) {
+                var h = canvas.height;
+                /* paths converge to evenly spaced horizontal lines */
+                return h * (0.25 + i * 0.14);
+            }
+
+            function initPath(i) {
+                var h = canvas.height;
+                return {
+                    pts:   [{ x: 0, y: h * (0.2 + i * 0.14 + (Math.random()-0.5)*0.06) }],
+                    sigma: h * 0.028,          /* chaos volatility */
+                    speed: 1.2 + i * 0.15,
+                    alpha: 0.15 + i * 0.18,
+                    width: 0.8 + i * 0.35,
+                    color: i === 2 ? TEAL : TEAL_DIM,
+                    idx:   i
+                };
+            }
+
+            function resetPaths() {
+                paths = [];
+                for (var i = 0; i < NUM_PATHS; i++) paths.push(initPath(i));
+            }
+
+            function drawGrid() {
+                var w = canvas.width, h = canvas.height;
+                ctx.strokeStyle = GRID;
+                ctx.lineWidth = 0.5;
+                var step = 80;
+                for (var x = 0; x < w; x += step) {
+                    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+                }
+                for (var y = 0; y < h; y += step) {
+                    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+                }
+            }
+
+            function drawPath(p) {
+                if (p.pts.length < 2) return;
+                ctx.beginPath();
+                ctx.moveTo(p.pts[0].x, p.pts[0].y);
+                for (var i = 1; i < p.pts.length; i++) {
+                    ctx.lineTo(p.pts[i].x, p.pts[i].y);
+                }
+                ctx.strokeStyle = p.color;
+                ctx.globalAlpha = p.alpha;
+                ctx.lineWidth   = p.width;
+                ctx.lineJoin    = 'round';
+                ctx.stroke();
+                ctx.globalAlpha = 1;
+
+                /* glowing tip dot */
+                var tip = p.pts[p.pts.length - 1];
+                ctx.beginPath();
+                ctx.arc(tip.x, tip.y, p.width * 2.5, 0, Math.PI * 2);
+                ctx.fillStyle   = p.color;
+                ctx.globalAlpha = p.alpha * 1.5;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+
+            function tick() {
+                var w = canvas.width, h = canvas.height;
+
+                /* Trail fade — slower in convergence phase for a cleaner look */
+                var fadeAlpha = (phase === 0) ? 0.15 : 0.07;
+                ctx.fillStyle = 'rgba(13,17,23,' + fadeAlpha + ')';
+                ctx.fillRect(0, 0, w, h);
+
+                drawGrid();
+
+                /* Convergence progress: 0 (chaotic) → 1 (fully calm) */
+                var t = (phase === 1) ? Math.min(1, phaseAge / CONVERGE_FRAMES) : 0;
+                /* ease in-out */
+                var ease = t < 0.5 ? 2*t*t : -1+(4-2*t)*t;
+
+                for (var i = 0; i < paths.length; i++) {
+                    var p = paths[i];
+                    var last = p.pts[p.pts.length - 1];
+
+                    /* sigma decays toward 0 in convergence phase */
+                    var currentSigma = p.sigma * (1 - ease * 0.97);
+
+                    /* In convergence phase, drift toward targetY */
+                    var ty   = targetY(p.idx);
+                    var dy   = (Math.random() - 0.5) * 2 * currentSigma;
+                    if (phase === 1) {
+                        /* gentle pull toward target line */
+                        var pull = (ty - last.y) * ease * 0.06;
+                        dy += pull;
+                    }
+
+                    var nx = last.x + 2.8;
+                    var ny = Math.max(h * 0.04, Math.min(h * 0.96, last.y + dy));
+
+                    /* Once paths reach the right edge, scroll left (keep growing) */
+                    if (nx > w) {
+                        /* shift all points left by one step */
+                        for (var j = 0; j < p.pts.length; j++) p.pts[j].x -= 2.8;
+                        /* remove any that went off screen */
+                        p.pts = p.pts.filter(function(pt) { return pt.x >= 0; });
+                        nx = p.pts[p.pts.length - 1].x + 2.8;
+                    }
+
+                    p.pts.push({ x: nx, y: ny });
+
+                    /* In convergence: the brightest path (idx 2) becomes the limit curve */
+                    if (phase === 1) {
+                        p.alpha = (p.idx === 2)
+                            ? 0.15 + ease * 0.65
+                            : Math.max(0.04, (0.15 + p.idx * 0.18) * (1 - ease * 0.75));
+                        p.width = (p.idx === 2)
+                            ? (0.8 + p.idx * 0.35) + ease * 1.2
+                            : (0.8 + p.idx * 0.35) * (1 - ease * 0.5);
+                        p.color = p.idx === 2 ? TEAL : TEAL_DIM;
+                    } else {
+                        p.alpha = 0.15 + p.idx * 0.18;
+                        p.width = 0.8 + p.idx * 0.35;
+                    }
+
+                    drawPath(p);
+                }
+
+                phaseAge++;
+                requestAnimationFrame(tick);
+            }
+
+            window.addEventListener('resize', function () {
+                resize();
+                ctx.fillStyle = BG;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                resetPaths();
+            });
+
+            resize();
+            ctx.fillStyle = BG;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            resetPaths();
+            tick();
+        })();
+        </script>
 
         <!-- Why?-->
         <section class="about-section" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/foto_ninfa.jpg" alt="..." /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <p class="text-black-50 mb-0">The idea is to create a place where I can show who I am, what I do and what I like, not to promote myself but to contain all the things I feel are useful, for me and hopefully for others.</p>
-                        </div>
-                    </div>
+            <div class="why-wrap">
+                <div class="why-img">
+                    <img src="assets/img/foto_palazzina.jpg" alt="" />
+                </div>
+                <div class="why-bar"></div>
+                <div class="why-text">
+                    <span class="why-label">Why this site?</span>
+                    <blockquote class="why-quote">
+                        A place to contain<br>
+                        all the things I feel<br>
+                        are useful —<br>
+                        <span class="why-quote-soft">for me, and hopefully<br>for others.</span>
+                    </blockquote>
+                    <div class="why-rule"></div>
                 </div>
             </div>
         </section>
@@ -309,50 +529,62 @@
         <!-- About me-->
         <section class="signup-section" id="signup-section">
             <div class="container px-4 px-lg-5">
-                <div class="row gx-0 mb-4 mb-lg-5">
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+
+                    <!-- Bio text -->
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
                             <h4>About me</h4>
-                            <p class="text-black-50 mb-0">I am a PhD candidate in Mathematics at  <a href="https://www.lpsm.paris/"
-                                target="_blank">Sorbonne university</a>.
+                            <p class="text-black-50 mb-0">I am a PhD candidate in Mathematics at <a href="https://www.lpsm.paris/" target="_blank">Sorbonne university</a>.
                                 My field of research is Stochastic Differential Equations, in particular the Theory of Rough Paths.
-                                I have done my bachelor at <a href="https://www.polito.it/en/education/bachelor-s-degree-programmes/mathematics-for-engineering"
-                                target="_blank">Politecnico di Torino</a> and
-                                then I moved at <a href="https://drive.google.com/file/d/1QEqfVDVNuKBzVTBSA4VHmQACvPNzgjtm/view?usp=sharing"
-                                target="_blank">Epfl</a> for my Master in <a href="https://www.epfl.ch/education/master/programs/applied-mathematics/"
-                                target="_blank">Applied Mathematics</a> with a Minor in <a href="https://www.epfl.ch/education/master/programs/financial-engineering/"
-                                target="_blank">Financial Engineering</a>.
-                                I have also worked in Finance as a Quant, 
-                                focusing on Quantitative Risk Management.
+                                I have done my bachelor at <a href="https://www.polito.it/en/education/bachelor-s-degree-programmes/mathematics-for-engineering" target="_blank">Politecnico di Torino</a> and
+                                then I moved to <a href="https://drive.google.com/file/d/1QEqfVDVNuKBzVTBSA4VHmQACvPNzgjtm/view?usp=sharing" target="_blank">EPFL</a> for my Master in
+                                <a href="https://www.epfl.ch/education/master/programs/applied-mathematics/" target="_blank">Applied Mathematics</a> with a Minor in
+                                <a href="https://www.epfl.ch/education/master/programs/financial-engineering/" target="_blank">Financial Engineering</a>.
+                                I have also worked in Finance as a Quant, focusing on Quantitative Risk Management.
                             </p>
                         </div>
                     </div>
+
+                    <!-- Carousel -->
                     <div class="col-xl-8 col-lg-7">
-                        <!-- <img class="img-small" src="assets/img/paris.jpeg" alt="..." /> -->
-                        <div class="pic-ctn">
-                            <img src="assets/img/rieti.jpg" alt="" class="pic">
-                            <img src="assets/img/torino.jpeg" alt="" class="pic">
-                            <img src="assets/img/epfl_vert.png" alt="" class="pic">
-                            <img src="assets/img/paris.jpeg" alt="" class="pic">
-                            <img src="assets/img/rolex.jpg" alt="" class="pic">
-                          </div>
-                        <input type="radio" name="slider" id="item-1" checked>
-                        <input type="radio" name="slider" id="item-2">
-                        <input type="radio" name="slider" id="item-3">
-                        <div class="cards">
-                            <label class="card" for="item-1" id="song-1">
-                            <img class="img-fluid mb-3 mb-lg-0" src="assets/img/torino.jpeg" alt="song">
-                            </label>
-                            <label class="card" for="item-2" id="song-2">
-                            <img class="img-fluid mb-3 mb-lg-0" src="assets/img/epfl_vert.png" alt="song">
-                            </label>
-                            <label class="card" for="item-3" id="song-3">
-                            <img class="img-fluid mb-3 mb-lg-0" src="assets/img/paris.jpeg" alt="song">
-                            </label>
+                        <div class="about-carousel" id="aboutCarousel">
+
+                            <!-- Slides -->
+                            <div class="ac-track">
+                                <div class="ac-slide active" data-caption="Rieti, Italy">
+                                    <img src="assets/img/rieti.jpg" alt="Rieti" />
+                                </div>
+                                <div class="ac-slide" data-caption="Torino, Italy">
+                                    <img src="assets/img/torino.jpeg" alt="Torino" />
+                                </div>
+                                <div class="ac-slide" data-caption="EPFL, Lausanne">
+                                    <img src="assets/img/Epfl.png" alt="EPFL" />
+                                </div>
+                                <div class="ac-slide" data-caption="Paris, France">
+                                    <img src="assets/img/paris.jpeg" alt="Paris" />
+                                </div>
+                                <div class="ac-slide" data-caption="Rolex Learning Center">
+                                    <img src="assets/img/rolex center.png" alt="Rolex Learning Center" />
+                                </div>
+                            </div>
+
+                            <!-- Caption -->
+                            <div class="ac-caption" id="acCaption"></div>
+
+                            <!-- Click zones -->
+                            <div class="ac-zone ac-zone-prev" aria-label="Previous"></div>
+                            <div class="ac-zone ac-zone-next" aria-label="Next"></div>
+
+                            <!-- Dots -->
+                            <div class="ac-dots" id="acDots"></div>
                         </div>
                     </div>
+
                 </div>
             </div>
+
+            <!-- Contact cards + social (unchanged) -->
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-md-4 mb-3 mb-md-0">
@@ -361,10 +593,8 @@
                                 <i class="fas fa-solid fa-file text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Resume</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50"><a href="https://drive.google.com/file/d/1LYh2kOZsxG7gUFOkKJIkCzyYN-QSgn_R/view?usp=sharing"
-                                    target="_blank">CV</a></div>
-                                <div class="small text-black-50"><a href="https://drive.google.com/file/d/1QEqfVDVNuKBzVTBSA4VHmQACvPNzgjtm/view?usp=sharing"
-                                        target="_blank">Master's courses</a></div>
+                                <div class="small text-black-50"><a href="https://drive.google.com/file/d/1LYh2kOZsxG7gUFOkKJIkCzyYN-QSgn_R/view?usp=sharing" target="_blank">CV</a></div>
+                                <div class="small text-black-50"><a href="https://drive.google.com/file/d/1QEqfVDVNuKBzVTBSA4VHmQACvPNzgjtm/view?usp=sharing" target="_blank">Master's courses</a></div>
                             </div>
                         </div>
                     </div>
@@ -374,7 +604,7 @@
                                 <i class="fas fa-envelope text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Contacts</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">lolloaga1999 at gmail.com</a></div>
+                                <div class="small text-black-50">lolloaga1999 at gmail.com</div>
                             </div>
                         </div>
                     </div>
@@ -390,81 +620,137 @@
                     </div>
                 </div>
                 <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="https://www.linkedin.com/in/lorenzo-agabiti-918465251/" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    <!-- <a class="mx-2" href="#!"><i class="fab fa-instagram"></i></a> -->
-                    <a class="mx-2" href="https://github.com/LorenzoAgabiti" target="_blank"><i class="fa fa-github"></i></a>
+                    <a class="mx-2" href="https://www.linkedin.com/in/lorenzo-agabiti-918465251/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a class="mx-2" href="https://github.com/LorenzoAgabiti" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </section>
 
-         <!-- Projects-->
-        <section class="projects-section bg-light" id="projects">
-            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Projects</h2>
-                    <p class="text-black-50">Things I worked on</p>
-                </div>
-            </div>
+        <script>
+        (function () {
+            var carousel  = document.getElementById('aboutCarousel');
+            if (!carousel) return;
+            var slides    = carousel.querySelectorAll('.ac-slide');
+            var dotsWrap  = document.getElementById('acDots');
+            var caption   = document.getElementById('acCaption');
+            var current   = 0;
+            var total     = slides.length;
+            var timer;
+
+            /* Build dots */
+            slides.forEach(function (_, i) {
+                var d = document.createElement('button');
+                d.className = 'ac-dot' + (i === 0 ? ' active' : '');
+                d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                d.addEventListener('click', function () { goTo(i); restart(); });
+                dotsWrap.appendChild(d);
+            });
+
+            function update() {
+                slides.forEach(function (s, i) { s.classList.toggle('active', i === current); });
+                dotsWrap.querySelectorAll('.ac-dot').forEach(function (d, i) { d.classList.toggle('active', i === current); });
+                caption.textContent = slides[current].dataset.caption || '';
+            }
+
+            function goTo(n) { current = (n + total) % total; update(); }
+
+            carousel.querySelector('.ac-zone-prev').addEventListener('click', function () { goTo(current - 1); restart(); });
+            carousel.querySelector('.ac-zone-next').addEventListener('click', function () { goTo(current + 1); restart(); });
+
+            /* Keyboard */
+            carousel.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft')  { goTo(current - 1); restart(); }
+                if (e.key === 'ArrowRight') { goTo(current + 1); restart(); }
+            });
+
+            /* Touch swipe */
+            var tx = 0;
+            carousel.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, {passive: true});
+            carousel.addEventListener('touchend',   function (e) {
+                var dx = e.changedTouches[0].clientX - tx;
+                if (Math.abs(dx) > 40) { goTo(current + (dx < 0 ? 1 : -1)); restart(); }
+            }, {passive: true});
+
+            /* Auto-play */
+            function autoPlay() { goTo(current + 1); }
+            function restart()  { clearInterval(timer); timer = setInterval(autoPlay, 4000); }
+            restart();
+            update();
+        })();
+        </script>
+
+        <!-- Projects -->
+        <section class="projects-section" id="projects">
             <div class="container px-4 px-lg-5">
-                <!-- Featured Project Row-->
-                <!-- <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Nome Progetto</h4>
-                            <p class="text-black-50 mb-0">Inserisci descrizione progetto</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="..." /></div>
-                </div> -->
-                <!-- Project One Row-->
-                <div class="row gx-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/project_thesis.jpg" alt="..." /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-proj text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white"><a href="https://drive.google.com/file/d/1spoDgBAJaYAt3UqXC-9EX-VNlrbTnVUO/view?usp=sharing"
-                                        target="_blank">Master Thesis</a></h4>
-                                    <p class="mb-0 text-white-50">The theory of rough paths is an important tool in solving Stochastic Differential Equations. We focuse on an approach
-                                        to controlled ODEs with a driving path of Hölder regularity greater than 1/3, based on the Sewing Bound and appropriate a priori estimates. We
-                                        take the first steps towards the extension of the theory to paths with arbitrarily low Hölder regularity.</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row gx-0 mb-5 align-items-center">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading text-uppercase">Projects</h2>
+                        <p class="text-black-50">Things I worked on</p>
                     </div>
                 </div>
-                <!-- Project Two Row-->
-                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/website.jpg" alt="..." /></div>
-                    <div class="col-lg-6">
-                        <div class="bg-proj text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white"><a href="https://github.com/LorenzoAgabiti/My-Personal-Website"
-                                        target="_blank">Personal Website</a></h4>
-                                    <p class="mb-0 text-white-50">Code for the website you are visiting</p>
-                                </div>
-                            </div>
+
+                <div class="proj-cards">
+
+                    <!-- Card 1 -->
+                    <article class="proj-card">
+                        <div class="proj-card-img">
+                            <img src="assets/img/project_thesis.jpg" alt="Master Thesis" />
                         </div>
-                    </div>
-                </div>
-                <!-- Project Three Row-->
-                <div class="row gx-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/Math.png" alt="..." /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-proj text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white"><a href="Blog/index.html"
-                                        target="_blank">Math Blog</a></h4>
-                                    <p class="mb-0 text-white-50">A blog to highlight Math research. Contains articles from different fields. </p>
-                                </div>
-                            </div>
+                        <div class="proj-card-body">
+                            <span class="proj-card-num">01</span>
+                            <h4 class="proj-card-title">
+                                <a href="https://drive.google.com/file/d/1spoDgBAJaYAt3UqXC-9EX-VNlrbTnVUO/view?usp=sharing" target="_blank">
+                                    Master Thesis
+                                </a>
+                            </h4>
+                            <p class="proj-card-desc">The theory of rough paths is an important tool in solving Stochastic Differential Equations. We focus on an approach to controlled ODEs with a driving path of Hölder regularity greater than 1/3, based on the Sewing Bound and appropriate a priori estimates. We take the first steps towards the extension of the theory to paths with arbitrarily low Hölder regularity.</p>
+                            <a href="https://drive.google.com/file/d/1spoDgBAJaYAt3UqXC-9EX-VNlrbTnVUO/view?usp=sharing" target="_blank" class="proj-card-link">
+                                Read thesis <span aria-hidden="true">→</span>
+                            </a>
                         </div>
-                    </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="proj-card">
+                        <div class="proj-card-img">
+                            <img src="assets/img/website.jpg" alt="Personal Website" />
+                        </div>
+                        <div class="proj-card-body">
+                            <span class="proj-card-num">02</span>
+                            <h4 class="proj-card-title">
+                                <a href="https://github.com/LorenzoAgabiti/My-Personal-Website" target="_blank">
+                                    Personal Website
+                                </a>
+                            </h4>
+                            <p class="proj-card-desc">Code for the website you are visiting. Built with Bootstrap, custom CSS, and vanilla JS.</p>
+                            <a href="https://github.com/LorenzoAgabiti/My-Personal-Website" target="_blank" class="proj-card-link">
+                                View on GitHub <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 temporarily hidden
+                    <article class="proj-card">
+                        <div class="proj-card-img">
+                            <img src="assets/img/Math.png" alt="Math Blog" />
+                        </div>
+                        <div class="proj-card-body">
+                            <span class="proj-card-num">03</span>
+                            <h4 class="proj-card-title">
+                                <a href="Blog/index.html" target="_blank">
+                                    Math Blog
+                                </a>
+                            </h4>
+                            <p class="proj-card-desc">A blog to highlight Math research. Contains articles from different fields of pure and applied mathematics.</p>
+                            <a href="Blog/index.html" target="_blank" class="proj-card-link">
+                                Visit blog <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+                    -->
+
                 </div>
             </div>
-        </section>
         
 <!-- Fourth Section: Interests -->
 <section id="interests" class="section scrollspy">
@@ -474,6 +760,7 @@
             <p class="text-black-50">My passions and hobbies</p>
         </div>
     </div>
+
 
     <!-- Math -->
     <div class="container">
@@ -532,14 +819,14 @@
                 </div>
                 <div class="card-content">
                 <span class="card-title activator teal-text hoverline"><a href="" 
-                    role="button" data-toggle="modal" data-target="#cookingModal">Cooking</a><i
+                    role="button" data-bs-toggle="modal" data-bs-target="#cookingModal">Cooking</a><i
                     class="mdi-navigation-more-vert right"></i></span>
                 <p>
                     Some recipes I like to cook, plats I enjoy and ideas for a meal.
                 </p>
                 </div>
                 <div class="card-action">
-                    <a aria-label="Visit Blog website" href="" data-toggle="modal" data-target="#cookingModal"
+                    <a aria-label="Visit Blog website" href="" data-bs-toggle="modal" data-bs-target="#cookingModal"
                     class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
                         class="cooking_icon"></i></a>
                 </div>
@@ -557,7 +844,7 @@
                     </div>
                     <div class="card-content">
                     <span class="card-title activator teal-text hoverline"><a href="" 
-                        role="button" data-toggle="modal" data-target="#musicModal">Music</a><i
+                        role="button" data-bs-toggle="modal" data-bs-target="#musicModal">Music</a><i
                         class="mdi-navigation-more-vert right"></i></span>
                     <p>
                         My Spotify and Youtube playlists.
@@ -585,7 +872,7 @@
                     </div>
                     <div class="card-content">
                     <span class="card-title activator teal-text hoverline"><a href="" 
-                        role="button" data-toggle="modal" data-target="#mapsModal">Maps</a><i
+                        role="button" data-bs-toggle="modal" data-bs-target="#mapsModal">Maps</a><i
                         class="mdi-navigation-more-vert right"></i></span>
                     <p>
                         Food spots on Google Maps. Rome, Paris...
@@ -620,14 +907,14 @@
                     </div>
                     <div class="card-content">
                     <span class="card-title activator teal-text hoverline"><a href="" 
-                        role="button" data-toggle="modal" data-target="#miscModal">Might be useful</a><i
+                        role="button" data-bs-toggle="modal" data-bs-target="#miscModal">Might be useful</a><i
                         class="mdi-navigation-more-vert right"></i></span>
                     <p>
                         You might find something you need...
                     </p>
                     </div>
                     <div class="card-action">
-                        <a aria-label="Visit Blog website"  href="" data-toggle="modal" data-target="#miscModal"
+                        <a aria-label="Visit Blog website"  href="" data-bs-toggle="modal" data-bs-target="#miscModal"
                         class="btn-floating btn-large waves-effect waves-light tooltipped"><i
                             class="fa fa-external-link" style="color: #343838;"></i></a>
                     </div>
@@ -638,201 +925,183 @@
   </section>
 
 <!-- Fifth section: For fun -->
-<section class="ftco-section ftco-project" id="fun">
-    <div class="container">
-        <div class="row justify-content-center pb-5">
-            <div class="col-md-12 heading-section text-center ftco-animate">
-                <span class="subheading">(When I'm bored)</span>
-                <h2 class="section-heading text-uppercase">For fun</h2>
-                <p class="text-black-50">Some useless stuff I had fun doing</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="project img ftco-animate img-2 d-flex justify-content-center align-items-center project_border"
-                    style="background-image: url(assets/img/fun_zapping.jpg);">
-                    <div class="overlay project_border"></div>
-                    <div class="text text-center p-4">
-                        <h1>
-                            <a href="https://lorenzoagabiti.shinyapps.io/choose_movie1/" target="_blank" style="color: white">What should I watch?</a>
-                        </h1>
-                        <span>Shiny apps</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="project img ftco-animate d-flex justify-content-center align-items-center project_border"
-                            style="background-image: url(assets/img/fun_pc.jpg);">
-                            <div class="overlay project_border"></div>
-                            <div class="text text-center p-4">
-                                <h3>
-                                    <a href="" target="_blank">Soon...</a>
-                                </h3>
-                                <span>Bad UI</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="project img ftco-animate d-flex justify-content-center align-items-center project_border"
-                            style="background-image: url(assets/img/fun_temp.jpg);" 
-                            >
-                            <div class="overlay project_border"></div>
-                            <div class="text text-center p-4">
-                                <h3>
-                                    <a href="" target="_blank">Soon...</a>
-                                </h3>
-                                <span>App</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section id="fun" class="fun-section">
+
+    <!-- Section header -->
+    <div class="fun-header">
+        <p class="fun-eyebrow">When I'm bored</p>
+        <h2 class="section-heading text-uppercase">For fun</h2>
+        <p class="fun-sub">Some useless stuff I had fun doing</p>
+    </div>
+
+    <!-- Hero tile -->
+    <div class="fun-hero">
+        <div class="fun-hero-bg" style="background-image: url(assets/img/fun_zapping.jpg);"></div>
+        <div class="fun-hero-grain"></div>
+        <div class="fun-hero-content">
+            <span class="fun-tag">Shiny App · R</span>
+            <h3 class="fun-hero-title">
+                <a href="https://lorenzoagabiti.shinyapps.io/choose_movie1/" target="_blank">
+                    What should I watch?
+                </a>
+            </h3>
+            <p class="fun-hero-desc">Can't decide what to watch? This app picks a movie or series for you based on your mood and preferences.</p>
+            <a href="https://lorenzoagabiti.shinyapps.io/choose_movie1/" target="_blank" class="fun-cta">
+                Try it <span aria-hidden="true">↗</span>
+            </a>
         </div>
     </div>
+
+    <!-- "More coming" strip -->
+    <div class="fun-more">
+        <span class="fun-more-line"></span>
+        <span class="fun-more-text">More experiments on the way</span>
+        <span class="fun-more-line"></span>
+    </div>
+
 </section>
-<br>
-<br>
 <!-- Sixth Section: Friends -->
 <section class="friends-section" id="friends">
     <div class="container px-4 px-lg-5">
         <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading text-uppercase">Friends</h2>
-                <p class="text-black-50">If you're the smartest person in the room, you're in the wrong room
-                    <br>
-                    <br>
-                </p>
+                <p class="text-black-50"><em>"If you're the smartest person in the room, you're in the wrong room."</em></p>
             </div>
         </div>
     </div>
-  
-    
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
+    <!-- Constellation (desktop) -->
+    <div class="friends-constellation" id="friendsConstellation" aria-hidden="true">
+        <svg class="friends-svg" id="friendsSvg"></svg>
 
-    <div class="row">
-        <div class="circle big">
-            <img src="assets/img/me.png" class= "friendsimg" style="height: 90%; width: 100%; border-radius: 50%;"/> 
-            <div class="middle">
-                <h3><strong>Me</strong></h3></div>
-            <div class="circle one ftco-animate">
-                <a href="https://albertobonicelli.github.io/"
-                    target="_blank">
-                    <img src="assets/img/boy_2.png" class= "friendsimg" style="height: 85%; width: 100%; border-radius: 50%;"/> 
-                </a>
-                <div class="middle">
-                    <h3>
-                        <a href="https://albertobonicelli.github.io/" target="_blank"><strong>Alberto</strong></a>
-                    </h3>
-                    <span>Postdoc Sorbonne</span>
-                </div>
+        <!-- Me — centre -->
+        <div class="fn-node fn-me" style="--tx:50%;--ty:50%;">
+            <div class="fn-avatar">
+                <img src="assets/img/me.png" alt="Me" />
             </div>
-            <div class="circle two ftco-animate">
-                <a href="https://www.rimacsrl.it/"
-                    target="_blank">
-                    <img src="assets/img/boy.png" class= "friendsimg" style="height: 85%; width: 100%; border-radius: 50%;"/> 
-                </a>
-                <div class="middle">
-                    <h3>
-                        <a href="https://www.rimacsrl.it/" target="_blank"><strong>Andrea</strong></a>
-                    </h3>
-                    <span>Entrepreneur</span>
-                </div>
-            </div>
-            <div class="circle three ftco-animate">
-                <a href="https://linkedin.com/in/francesco-marcantoni-mx/"
-                    target="_blank">
-                    <img src="assets/img/boy_glasses.png" class= "friendsimg" style="height: 85%; width: 100%; border-radius: 50%;"/> 
-                </a>
-                <div class="middle">
-                    <h3>
-                        <a href="https://linkedin.com/in/francesco-marcantoni-mx/" target="_blank"><strong>Francesco</strong></a>
-                    </h3>
-                    <span>PhD at Epfl</span>
-                </div>
-            </div>
-            <div class="circle four ftco-animate">
-                <a href="https://www.linkedin.com/in/luca-rossi-0a255b1b8/"
-                    target="_blank">
-                    <img src="assets/img/boy_glasses.png" class= "friendsimg" style="height: 85%; width: 100%; border-radius: 50%;"/> 
-                </a>
-                <div class="middle">
-                    <h3>
-                        <a href="https://www.linkedin.com/in/luca-rossi-0a255b1b8/" target="_blank"><strong>Luca</strong></a>
-                    </h3>
-                    <span>Quantitative Trader</span>
-                </div>
-            </div>
-            <div class="circle five ftco-animate">
-                <a href="https://www.linkedin.com/in/federica-padovano-a2215222a/?originalSubdomain=it"
-                    target="_blank">
-                    <img src="assets/img/girl.png" class= "friendsimg" style="height: 80%; width: 100%; border-radius: 50%;"/> 
-                </a>
-                <div class="middle">
-                    <h3>
-                        <a href="https://www.linkedin.com/in/federica-padovano-a2215222a/?originalSubdomain=it" target="_blank"><strong>Federica</strong></a>
-                    </h3>
-                    <span>Phd at Sorbonne</span>
-                </div>
-            </div>
-            <div class="circle six ftco-animate">
-                <a href="https://francescoposa.it/"
-                    target="_blank">
-                    <img src="assets/img/boy_3.png" class= "friendsimg" style="height: 85%; width: 100%; border-radius: 50%;"/> 
-                </a>
-                <div class="middle">
-                    <h3>
-                        <a href="https://francescoposa.it/" target="_blank"><strong>Fra</strong></a>
-                    </h3>
-                    <span>Software Engineer</span>
-                </div>
-            </div>
-        </div>           
+            <div class="fn-label">Me</div>
+        </div>
+
+        <!-- Friends — positions set via CSS custom props (% of container) -->
+        <a class="fn-node" href="https://albertobonicelli.github.io/" target="_blank"
+           style="--tx:18%;--ty:18%;" data-delay="0s">
+            <div class="fn-avatar"><img src="assets/img/boy_2.png" alt="Alberto" /></div>
+            <div class="fn-label">Alberto<span>Postdoc · Sorbonne</span></div>
+        </a>
+        <a class="fn-node" href="https://www.rimacsrl.it/" target="_blank"
+           style="--tx:50%;--ty:12%;" data-delay=".15s">
+            <div class="fn-avatar"><img src="assets/img/boy.png" alt="Andrea" /></div>
+            <div class="fn-label">Andrea<span>Entrepreneur</span></div>
+        </a>
+        <a class="fn-node" href="https://linkedin.com/in/francesco-marcantoni-mx/" target="_blank"
+           style="--tx:82%;--ty:18%;" data-delay=".3s">
+            <div class="fn-avatar"><img src="assets/img/boy_glasses.png" alt="Francesco" /></div>
+            <div class="fn-label">Francesco<span>PhD · EPFL</span></div>
+        </a>
+        <a class="fn-node" href="https://www.linkedin.com/in/luca-rossi-0a255b1b8/" target="_blank"
+           style="--tx:82%;--ty:78%;" data-delay=".45s">
+            <div class="fn-avatar"><img src="assets/img/boy_glasses.png" alt="Luca" /></div>
+            <div class="fn-label">Luca<span>Quant Trader</span></div>
+        </a>
+        <a class="fn-node" href="https://www.linkedin.com/in/federica-padovano-a2215222a/" target="_blank"
+           style="--tx:50%;--ty:85%;" data-delay=".6s">
+            <div class="fn-avatar"><img src="assets/img/girl.png" alt="Federica" /></div>
+            <div class="fn-label">Federica<span>PhD · Sorbonne</span></div>
+        </a>
+        <a class="fn-node" href="https://francescoposa.it/" target="_blank"
+           style="--tx:18%;--ty:78%;" data-delay=".75s">
+            <div class="fn-avatar"><img src="assets/img/boy_3.png" alt="Fra" /></div>
+            <div class="fn-label">Fra<span>Software Engineer</span></div>
+        </a>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br> 
-    <br>
-    <br>         
+
+    <!-- Grid fallback (mobile) -->
+    <div class="friends-grid-mobile container px-4 px-lg-5">
+        <div class="row justify-content-center g-4">
+            <div class="col-4 col-sm-3 text-center">
+                <div class="fgm-avatar"><img src="assets/img/me.png" alt="Me"/></div>
+                <div class="fgm-name">Me</div>
+            </div>
+            <div class="col-4 col-sm-3 text-center">
+                <a href="https://albertobonicelli.github.io/" target="_blank" class="fgm-link">
+                    <div class="fgm-avatar"><img src="assets/img/boy_2.png" alt="Alberto"/></div>
+                    <div class="fgm-name">Alberto</div>
+                    <div class="fgm-role">Postdoc · Sorbonne</div>
+                </a>
+            </div>
+            <div class="col-4 col-sm-3 text-center">
+                <a href="https://www.rimacsrl.it/" target="_blank" class="fgm-link">
+                    <div class="fgm-avatar"><img src="assets/img/boy.png" alt="Andrea"/></div>
+                    <div class="fgm-name">Andrea</div>
+                    <div class="fgm-role">Entrepreneur</div>
+                </a>
+            </div>
+            <div class="col-4 col-sm-3 text-center">
+                <a href="https://linkedin.com/in/francesco-marcantoni-mx/" target="_blank" class="fgm-link">
+                    <div class="fgm-avatar"><img src="assets/img/boy_glasses.png" alt="Francesco"/></div>
+                    <div class="fgm-name">Francesco</div>
+                    <div class="fgm-role">PhD · EPFL</div>
+                </a>
+            </div>
+            <div class="col-4 col-sm-3 text-center">
+                <a href="https://www.linkedin.com/in/luca-rossi-0a255b1b8/" target="_blank" class="fgm-link">
+                    <div class="fgm-avatar"><img src="assets/img/boy_glasses.png" alt="Luca"/></div>
+                    <div class="fgm-name">Luca</div>
+                    <div class="fgm-role">Quant Trader</div>
+                </a>
+            </div>
+            <div class="col-4 col-sm-3 text-center">
+                <a href="https://www.linkedin.com/in/federica-padovano-a2215222a/" target="_blank" class="fgm-link">
+                    <div class="fgm-avatar"><img src="assets/img/girl.png" alt="Federica"/></div>
+                    <div class="fgm-name">Federica</div>
+                    <div class="fgm-role">PhD · Sorbonne</div>
+                </a>
+            </div>
+            <div class="col-4 col-sm-3 text-center">
+                <a href="https://francescoposa.it/" target="_blank" class="fgm-link">
+                    <div class="fgm-avatar"><img src="assets/img/boy_3.png" alt="Fra"/></div>
+                    <div class="fgm-name">Fra</div>
+                    <div class="fgm-role">Software Engineer</div>
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
 
+<script>
+/* Draw SVG connector lines from centre node to each friend */
+(function() {
+    function drawLines() {
+        var container = document.getElementById('friendsConstellation');
+        var svg = document.getElementById('friendsSvg');
+        if (!container || !svg) return;
+        var cw = container.offsetWidth, ch = container.offsetHeight;
+        svg.setAttribute('viewBox', '0 0 ' + cw + ' ' + ch);
+        svg.innerHTML = '';
+        var nodes  = container.querySelectorAll('.fn-node');
+        var centre = nodes[0];
+        var cx = centre.offsetLeft + centre.offsetWidth  / 2;
+        var cy = centre.offsetTop  + centre.offsetHeight / 2;
+        for (var i = 1; i < nodes.length; i++) {
+            var n  = nodes[i];
+            var nx = n.offsetLeft + n.offsetWidth  / 2;
+            var ny = n.offsetTop  + n.offsetHeight / 2;
+            var line = document.createElementNS('http://www.w3.org/2000/svg','line');
+            line.setAttribute('x1', cx); line.setAttribute('y1', cy);
+            line.setAttribute('x2', nx); line.setAttribute('y2', ny);
+            line.setAttribute('class','fn-line');
+            svg.appendChild(line);
+        }
+    }
+    window.addEventListener('load',   drawLines);
+    window.addEventListener('resize', drawLines);
+})();
+</script>
+
         <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Personal website &copy; Lorenzo Agabiti 2024</div></footer>
-        <!-- Bootstrap core JS-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Personal website &copy; Lorenzo Agabiti 2026</div></footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery-migrate-3.0.1.min.js"></script>
-        <script src="js/jquery.waypoints.min.js"></script>
-        <script src="js/jquery.stellar.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/aos.js"></script>
-        <script src="js/scrollax.min.js"></script>
-        <script src="js/main.js"></script>
     </body>
 </html>
