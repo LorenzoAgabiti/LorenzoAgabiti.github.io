@@ -3,7 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Math Book Wishlist</title>
+<meta name="description" content="Mathematics books Lorenzo Agabiti wants to read next." />
+<meta name="author" content="Lorenzo Agabiti" />
+<title>Math Book Wishlist | Lorenzo Agabiti</title>
+<link rel="canonical" href="https://lorenzoagabiti.github.io/wishlist.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Lorenzo Agabiti" />
+<meta property="og:title" content="Math Book Wishlist | Lorenzo Agabiti" />
+<meta property="og:description" content="Mathematics books Lorenzo Agabiti wants to read next." />
+<meta property="og:url" content="https://lorenzoagabiti.github.io/wishlist.html" />
+<meta property="og:image" content="https://lorenzoagabiti.github.io/assets/img/me.png" />
+<meta name="twitter:card" content="summary" />
 <style>
 :root{--bg:#faf8f4;--card:#fff;--ink:#222;--mute:#777;--line:#e5e0d6;--accent:#8a3b2e}
 @media (prefers-color-scheme:dark){:root{--bg:#1c1b19;--card:#262522;--ink:#eee;--mute:#999;--line:#3a3834;--accent:#e09a88}}
@@ -79,5 +89,6 @@ fetch("books.json").then(r=>r.json()).then(d=>{
 }).catch(()=>{$("#list").textContent="Could not load books.json."});
 ["search","topicFilter","statusFilter","priFilter"].forEach(i=>$("#"+i).addEventListener("input",render));
 </script>
+<script data-goatcounter="https://lorenzoagabiti.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
