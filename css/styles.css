@@ -14457,3 +14457,41 @@ html {
 
 
 
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   LAB TILE + SECRET BUTTON
+   ═══════════════════════════════════════════════════════════════════ */
+.fun-hero--lab {
+  height: auto;
+  min-height: 320px;
+  margin-top: 1.5rem;
+  background: #16221f;
+}
+.fun-hero--lab::after { background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 70%); }
+.fun-lab-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+}
+.fun-lab-svg polyline {
+  fill: none;
+  stroke: #64a19d;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.secret-btn {
+  background: none;
+  border: 0;
+  padding: 0 0.35rem;
+  margin-left: 0.5rem;
+  font: inherit;
+  color: inherit;
+  opacity: 0.25;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.secret-btn:hover, .secret-btn:focus-visible { opacity: 1; }

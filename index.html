@@ -1006,6 +1006,21 @@
         </div>
     </div>
 
+    <!-- Lab tile: rough path explorer -->
+    <div class="fun-hero fun-hero--lab">
+        <svg class="fun-lab-svg" viewBox="0 0 800 200" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polyline points="0,97.7 5,102.3 10,100.3 15,97.4 20,89.1 25,87.1 30,97.1 35,101.0 40,110.3 45,112.5 50,116.1 55,117.8 60,102.8 65,110.5 70,115.0 75,119.5 80,104.3 85,88.6 90,80.6 95,76.4 100,79.1 105,78.7 110,83.4 115,77.6 120,80.4 125,83.9 130,78.0 135,93.4 140,98.5 145,109.2 150,103.6 155,97.0 160,93.9 165,92.9 170,98.6 175,100.9 180,96.8 185,88.2 190,83.5 195,94.5 200,87.3 205,89.5 210,93.3 215,79.9 220,80.3 225,92.1 230,74.0 235,71.1 240,70.1 245,62.7 250,67.2 255,66.7 260,53.5 265,60.9 270,67.0 275,75.5 280,88.4 285,91.7 290,92.8 295,81.1 300,86.6 305,81.1 310,77.0 315,65.6 320,56.9 325,52.2 330,63.8 335,45.5 340,32.4 345,34.5 350,47.5 355,52.7 360,35.6 365,20.0 370,23.2 375,20.0 380,20.0 385,28.8 390,38.7 395,40.1 400,42.3 405,46.2 410,60.6 415,66.2 420,70.8 425,75.8 430,61.6 435,73.2 440,81.8 445,86.5 450,68.8 455,63.1 460,70.7 465,54.4 470,52.7 475,61.9 480,50.1 485,64.6 490,69.5 495,68.2 500,71.1 505,77.0 510,78.0 515,88.4 520,82.4 525,78.7 530,88.0 535,88.3 540,80.4 545,88.9 550,102.1 555,98.1 560,85.6 565,84.4 570,83.1 575,80.4 580,93.0 585,83.8 590,95.2 595,83.7 600,76.7 605,82.3 610,92.5 615,100.2 620,103.3 625,104.6 630,106.0 635,111.2 640,109.6 645,112.1 650,117.2 655,117.2 660,124.1 665,129.2 670,147.3 675,150.2 680,146.4 685,143.0 690,142.9 695,151.2 700,148.2 705,151.7 710,168.2 715,145.1 720,135.0 725,137.2 730,140.8 735,142.9 740,139.0 745,144.9 750,147.5 755,142.8 760,164.7 765,167.9 770,162.9 775,162.0 780,159.9 785,159.4 790,134.8 795,130.4 800,139.5" /></svg>
+        <div class="fun-hero-content">
+            <span class="fun-tag">Interactive · JavaScript</span>
+            <h3 class="fun-hero-title">
+                <a href="lab/rough-paths.html">Rough path explorer</a>
+            </h3>
+            <p class="fun-hero-desc">Drag a slider and watch a random path go from smooth to wildly rough. A picture of the regularity &alpha; that my research is about.</p>
+            <a href="lab/rough-paths.html" class="fun-cta">
+                Try it <span aria-hidden="true">&rarr;</span>
+            </a>
+        </div>
+    </div>
+
     <!-- "More coming" strip -->
     <div class="fun-more">
         <span class="fun-more-line"></span>
@@ -1154,9 +1169,27 @@
 </script>
 
         <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Personal website &copy; Lorenzo Agabiti 2026</div></footer>
+        <!-- Secret theorem popup (opened by the footer button or the Konami code) -->
+        <div class="modal fade" id="theoremModal" tabindex="-1" aria-labelledby="theoremModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="theoremModalLabel">Theorem</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body"><p id="theoremStatement" class="mb-0"></p></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="theoremAgain">Another one</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Personal website &copy; Lorenzo Agabiti 2026 <button type="button" id="secretBtn" class="secret-btn" aria-label="Secret: show a random theorem">&sum;</button></div></footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
+        <script src="js/theorems.js" defer></script>
     <script data-goatcounter="https://lorenzoagabiti.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
