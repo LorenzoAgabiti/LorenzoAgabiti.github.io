@@ -1,0 +1,173 @@
+[
+ {
+  "id": 1,
+  "title": "Nonlinear Dispersive Equations: Local and Global Analysis",
+  "author": "Terence Tao",
+  "topic": "Dispersive PDE",
+  "note": "The CBMS book; core reference.",
+  "bought": false,
+  "priority": "high"
+ },
+ {
+  "id": 2,
+  "title": "Introduction to Nonlinear Dispersive Equations",
+  "author": "Felipe Linares, Gustavo Ponce",
+  "topic": "Dispersive PDE",
+  "note": "",
+  "bought": false,
+  "priority": "medium"
+ },
+ {
+  "id": 7,
+  "title": "Fourier Analysis and Nonlinear Partial Differential Equations",
+  "author": "H. Bahouri, J.-Y. Chemin, R. Danchin",
+  "topic": "Harmonic analysis",
+  "note": "Littlewood–Paley theory.",
+  "bought": false,
+  "priority": "high"
+ },
+ {
+  "id": 12,
+  "title": "Elliptic Partial Differential Equations of Second Order",
+  "author": "David Gilbarg, Neil S. Trudinger",
+  "topic": "Elliptic PDE",
+  "note": "The classic reference.",
+  "bought": true,
+  "priority": ""
+ },
+ {
+  "id": 13,
+  "title": "Elliptic Partial Differential Equations",
+  "author": "Qing Han, Fanghua Lin",
+  "topic": "Elliptic PDE",
+  "note": "Short and concise.",
+  "bought": false,
+  "priority": "low"
+ },
+ {
+  "id": 15,
+  "title": "Fully Nonlinear Elliptic Equations",
+  "author": "Luis Caffarelli, Xavier Cabré",
+  "topic": "Elliptic PDE",
+  "note": "",
+  "bought": false,
+  "priority": "high"
+ },
+ {
+  "id": 24,
+  "title": "Functional Analysis, Sobolev Spaces and Partial Differential Equations",
+  "author": "Haim Brezis",
+  "topic": "Functional analysis",
+  "note": "Bridges FA and PDE.",
+  "bought": false,
+  "priority": "high"
+ },
+ {
+  "id": 37,
+  "title": "History of Functional Analysis",
+  "author": "Jean Dieudonné",
+  "topic": "Functional analysis",
+  "note": "",
+  "bought": false,
+  "priority": "medium"
+ },
+ {
+  "id": 40,
+  "title": "Functional Analysis",
+  "author": "Peter D. Lax",
+  "topic": "Functional analysis",
+  "note": "",
+  "bought": false,
+  "priority": "low"
+ },
+ {
+  "id": 44,
+  "title": "Measure Theory, Volume I",
+  "author": "V. I. Bogachev",
+  "topic": "Measure theory",
+  "note": "Advanced.",
+  "bought": false,
+  "priority": "low"
+ },
+ {
+  "id": 45,
+  "title": "Measure Theory, Volume II",
+  "author": "V. I. Bogachev",
+  "topic": "Measure theory",
+  "note": "Advanced.",
+  "bought": false,
+  "priority": "low"
+ },
+ {
+  "id": 62,
+  "title": "Introduction to Quantum Mechanics",
+  "author": "David J. Griffiths",
+  "topic": "Quantum mechanics",
+  "note": "",
+  "bought": false,
+  "priority": "medium"
+ },
+ {
+  "id": 68,
+  "title": "What Is a Quantum Field Theory? A First Introduction for Mathematicians",
+  "author": "Michel Talagrand",
+  "topic": "Quantum field theory",
+  "note": "",
+  "bought": false,
+  "priority": "medium"
+ },
+ {
+  "id": 76,
+  "title": "Quantum Field Theory in a Nutshell",
+  "author": "A. Zee",
+  "topic": "Quantum field theory",
+  "note": "",
+  "bought": false,
+  "priority": "medium"
+ },
+ {
+  "id": 87,
+  "title": "Stochastic Equations in Infinite Dimensions",
+  "author": "Giuseppe Da Prato, Jerzy Zabczyk",
+  "topic": "Stochastic PDE",
+  "note": "",
+  "bought": false,
+  "priority": "medium"
+ },
+ {
+  "id": 88,
+  "title": "A Course on Rough Paths: With an Introduction to Regularity Structures",
+  "author": "Peter K. Friz, Martin Hairer",
+  "topic": "Stochastic PDE",
+  "note": "",
+  "bought": true,
+  "priority": ""
+ },
+ {
+  "id": 91,
+  "title": "An Introduction to the Regularity Theory for Elliptic Systems, Harmonic Maps and Minimal Graphs",
+  "author": "Mariano Giaquinta, Luca Martinazzi",
+  "topic": "Elliptic PDE",
+  "note": "",
+  "bought": true,
+  "priority": ""
+ },
+ {
+  "id": 92,
+  "title": "Lectures on Elliptic and Parabolic Equations in Hölder Spaces",
+  "author": "N. V. Krylov",
+  "topic": "Elliptic PDE",
+  "note": "",
+  "bought": false,
+  "priority": "low"
+ },
+ {
+  "id": 93,
+  "title": "Nonlinear Elliptic Equations of the Second Order",
+  "author": "Qing Han",
+  "topic": "Elliptic PDE",
+  "note": "",
+  "bought": false,
+  "priority": "medium"
+ }
+]

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Math Book Wishlist</title>
+<style>
+:root{--bg:#faf8f4;--card:#fff;--ink:#222;--mute:#777;--line:#e5e0d6;--accent:#8a3b2e}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1b19;--card:#262522;--ink:#eee;--mute:#999;--line:#3a3834;--accent:#e09a88}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Georgia,serif}
+main{max-width:860px;margin:0 auto;padding:32px 16px 64px}
+h1{margin:0 0 4px;font-size:2rem}
+.sub{color:var(--mute);margin-bottom:24px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+input,select{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+#search{flex:1;min-width:160px}
+.book{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.book.done{opacity:.55}.book.done .t{text-decoration:line-through}
+.body{flex:1}
+.t{font-weight:bold;font-size:1.05rem}
+.a{color:var(--mute)}
+.tag{display:inline-block;font:12px sans-serif;color:var(--accent);border:1px solid var(--accent);border-radius:99px;padding:1px 8px;margin-top:6px}
+.n{margin-top:4px;font-size:.92rem}
+.pri{font:12px sans-serif;color:var(--mute);white-space:nowrap;padding-top:4px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;border:1px solid var(--mute);margin-right:5px}
+.dot[data-p=high]{background:#c0392b}.dot[data-p=medium]{background:#e0a030}.dot[data-p=low]{background:#7a9cc0}
+.count{color:var(--mute);font-size:.9rem;margin-bottom:10px}
+</style>
+</head>
+<body>
+<main>
+<h1>Math Book Wishlist</h1>
+<div class="sub">Books I want to buy.</div>
+<div class="bar">
+  <input id="search" type="search" placeholder="Search title, author, topic…">
+  <select id="topicFilter"><option value="">All topics</option></select>
+  <select id="priFilter">
+    <option value="">All priorities</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="none">No priority</option>
+  </select>
+  <select id="statusFilter">
+    <option value="">All</option><option value="want">Still wanted</option><option value="bought">Bought</option>
+  </select>
+</div>
+<div class="count" id="count"></div>
+<div id="list"></div>
+</main>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let books=[];
+
+function render(){
+  const q=$("#search").value.toLowerCase(),tf=$("#topicFilter").value,sf=$("#statusFilter").value,pf=$("#priFilter").value;
+  const shown=books.filter(b=>
+    (!q||[b.title,b.author,b.topic,b.note].join(" ").toLowerCase().includes(q))&&
+    (!tf||b.topic===tf)&&
+    (!pf||(pf==="none"?!b.priority:b.priority===pf))&&
+    (!sf||(sf==="bought")===b.bought));
+  $("#count").textContent=`${shown.length} shown · ${books.filter(b=>!b.bought).length} still wanted · ${books.filter(b=>b.bought).length} bought`;
+  $("#list").innerHTML=shown.map(b=>`
+   <div class="book${b.bought?" done":""}">
+     <div class="body">
+       <div class="t">${esc(b.title)}</div>
+       <div class="a">${esc(b.author)}</div>
+       ${b.topic?`<span class="tag">${esc(b.topic)}</span>`:""}
+       ${b.note?`<div class="n">${esc(b.note)}</div>`:""}
+     </div>
+     ${b.priority?`<div class="pri"><span class="dot" data-p="${esc(b.priority)}"></span>${esc(b.priority)}</div>`:""}
+   </div>`).join("")||'<div class="a">Nothing here.</div>';
+}
+
+fetch("books.json").then(r=>r.json()).then(d=>{
+  books=d;
+  const ts=[...new Set(books.map(b=>b.topic).filter(Boolean))].sort();
+  $("#topicFilter").innerHTML+=ts.map(t=>`<option>${esc(t)}</option>`).join("");
+  render();
+}).catch(()=>{$("#list").textContent="Could not load books.json."});
+["search","topicFilter","statusFilter","priFilter"].forEach(i=>$("#"+i).addEventListener("input",render));
+</script>
+</body>
+</html>
