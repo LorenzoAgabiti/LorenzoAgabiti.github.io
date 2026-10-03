@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Interactive demo: sample paths of fractional Brownian motion with adjustable Hölder exponent alpha, from smooth (alpha near 1) to very rough (alpha near 0)." />
+    <meta name="author" content="Lorenzo Agabiti" />
+    <title>Rough Path Explorer | Lorenzo Agabiti</title>
+    <link rel="canonical" href="https://lorenzoagabiti.github.io/lab/rough-paths.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lorenzo Agabiti" />
+    <meta property="og:title" content="Rough Path Explorer | Lorenzo Agabiti" />
+    <meta property="og:description" content="Interactive demo: sample paths of fractional Brownian motion with adjustable Hölder exponent alpha, from smooth (alpha near 1) to very rough (alpha near 0)." />
+    <meta property="og:url" content="https://lorenzoagabiti.github.io/lab/rough-paths.html" />
+    <meta property="og:image" content="https://lorenzoagabiti.github.io/assets/img/me.png" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap" rel="stylesheet" />
+    <style>
+        :root { --teal: #50817e; --teal-dark: #3b6360; --ink: #1d2a29; --muted: #5d6b6a; --bg: #f6f9f8; --card: #fff; --line: #d8e3e1; }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Nunito, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
+        header { background: var(--teal); color: #fff; padding: 1rem 1.25rem; }
+        header a { color: #fff; text-decoration: none; font-weight: 700; }
+        header a:hover, header a:focus { text-decoration: underline; }
+        main { max-width: 960px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+        h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; margin: 0.5rem 0 0.25rem; }
+        .lead { color: var(--muted); margin: 0 0 1.5rem; max-width: 62ch; }
+        .panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1rem; }
+        .controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem 1.5rem; align-items: end; margin-bottom: 1rem; }
+        label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem; }
+        output { font-variant-numeric: tabular-nums; color: var(--teal-dark); font-weight: 800; }
+        input[type=range] { width: 100%; accent-color: var(--teal); }
+        .btns { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        button { font: inherit; font-weight: 700; padding: 0.45rem 0.9rem; border-radius: 8px; border: 1.5px solid var(--teal); background: #fff; color: var(--teal-dark); cursor: pointer; }
+        button:hover { background: #eaf2f1; }
+        button[aria-pressed="true"] { background: var(--teal); color: #fff; }
+        button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid #f0b429; outline-offset: 2px; }
+        canvas { width: 100%; height: 420px; display: block; border-radius: 8px; background: #fbfdfc; border: 1px solid var(--line); }
+        .status { color: var(--muted); font-size: 0.9rem; margin: 0.75rem 0 0; min-height: 1.4em; }
+        h2 { font-size: 1.25rem; margin: 2rem 0 0.5rem; }
+        .math { font-family: "Cambria Math", "STIX Two Math", Georgia, serif; background: #eef4f3; padding: 0.6rem 0.9rem; border-radius: 8px; display: block; overflow-x: auto; }
+        footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 1rem; }
+        @media (max-width: 600px) { canvas { height: 300px; } }
+    </style>
+</head>
+<body>
+    <header><a href="../index.html">&larr; Lorenzo Agabiti</a></header>
+    <main>
+        <h1>Rough path explorer</h1>
+        <p class="lead">Move the slider to change the regularity <strong>&alpha;</strong> of a random path. Close to 1 the path is almost smooth; close to 0 it is wildly rough, which is the regime where rough path theory is needed to make sense of differential equations driven by it.</p>
+
+        <div class="panel">
+            <div class="controls">
+                <div>
+                    <label for="alpha">Hölder exponent &alpha; = <output id="alphaOut" for="alpha">0.30</output></label>
+                    <input type="range" id="alpha" min="0.10" max="0.95" step="0.01" value="0.30" />
+                </div>
+                <div>
+                    <label for="count">Number of paths = <output id="countOut" for="count">3</output></label>
+                    <input type="range" id="count" min="1" max="5" step="1" value="3" />
+                </div>
+                <div class="btns">
+                    <button type="button" id="resample">Resample</button>
+                    <button type="button" id="modeTime" aria-pressed="true">Path over time</button>
+                    <button type="button" id="modePlane" aria-pressed="false">Curve in the plane</button>
+                </div>
+            </div>
+            <canvas id="plot" role="img" aria-label="Plot of random sample paths with the chosen roughness"></canvas>
+            <p class="status" id="status" aria-live="polite"></p>
+        </div>
+
+        <h2>What you are seeing</h2>
+        <p>Each curve is a sample of fractional Brownian motion with Hurst parameter H = &alpha;, generated exactly from its covariance matrix. Such a path is (almost) <em>&alpha;-Hölder continuous</em>:</p>
+        <span class="math">|X<sub>t</sub> &minus; X<sub>s</sub>| &le; C &middot; |t &minus; s|<sup>&alpha;</sup></span>
+        <p>The smaller &alpha; is, the faster the path can oscillate on small time scales. When changing &alpha; the random numbers stay the same, so you can watch the same path become rougher or smoother. In the plane view, two independent paths are drawn against each other, coloured from start (blue) to end (orange); this is how paths driving a rough differential equation are usually pictured.</p>
+        <p>For &alpha; &gt; 1/2 classical tools still work; for &alpha; &le; 1/3 one needs higher-order information about the path. My paper with Alberto Bonicelli and Lorenzo Zambotti proves a priori bounds for rough differential equations over the full range &alpha; &isin; (0,1). More on the <a href="../Blog/thesis.html">blog</a> and on the <a href="../index.html#projects">home page</a>.</p>
+    </main>
+    <footer>Personal website &copy; Lorenzo Agabiti 2026</footer>
+    <script src="rough-paths.js"></script>
+<script data-goatcounter="https://lorenzoagabiti.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
